@@ -1,0 +1,15 @@
+Dienst VOS
+DienstVersie 15.1  
+DienstOmgeving Beproeving  
+DraaiboekVersie 0.2 
+DraaiboekStatus Concept  
+DraaiboekOmschrijving Tweede Concept LaTeX opzet  
+DraaiboekAuteur Peter Mansvelder  
+Copyright Copyright (c) 2017 ProRail  
+StartDatum 1 April 2017  
+StartTijd 09:00  
+EindTijd 17:00  
+AppNodeA pdccmf.dc.post21.nl
+AppNodeB pdccmg.dc.post21.nl
+AppNodeC pdccmh.dc.post21.nl
+

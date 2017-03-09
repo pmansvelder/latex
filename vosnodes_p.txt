@@ -1,0 +1,12 @@
+Database Server 1 & pdccja.dc.post21.nl
+Database Server 2 & pdccja.dc.post21.nl
+Weblogic Server 1 (LLP2/JEE5) & pdccjf.dc.post21.nl
+Weblogic Server 2 (LLP2/JEE5) & pdccjg.dc.post21.nl
+Weblogic Server 3 (LLP2/JEE5) & pdccjh.dc.post21.nl
+Weblogic Server 4 (LLP2/JEE5) & pdccjj.dc.post21.nl
+Weblogic Server 5 (LLP2/JEE5) & pdccjk.dc.post21.nl
+Weblogic Server 1 (LLP3/JEE6) & pdccuf.dc.post21.nl
+Weblogic Server 2 (LLP3/JEE6) & pdccug.dc.post21.nl
+Weblogic Server 3 (LLP3/JEE6) & pdccuh.dc.post21.nl
+Weblogic Server 4 (LLP3/JEE6) & pdccuj.dc.post21.nl
+Weblogic Server 5 (LLP3/JEE6) & pdccuk.dc.post21.nl
