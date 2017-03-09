@@ -15,7 +15,6 @@
 \usepackage{array}
 \usepackage{colortbl}
 
-
 \ExplSyntaxOn
 \NewDocumentCommand{\addcolumn}{mm}
  {
@@ -54,8 +53,6 @@
 
 \ExplSyntaxOff
 
-
-
 \usepackage[dutch]{babel}
 \usepackage{colortbl}
 
@@ -70,10 +67,10 @@
 \pagestyle{fancyplain}
 \pagenumbering{roman}
 \lhead{\includegraphics[scale=0.8]{/home/pman/Afbeeldingen/ProrailLogo}}
-\rhead{Draaiboek IDS \Dienst \ \DienstVersie \\Versie \DraaiboekVersie\\}
+\rhead{Draaiboek \DienstChange \ \Dienst \ \DienstVersie \\Versie \DraaiboekVersie\\}
 \chead{\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
 \rfoot{\ \\Pagina \thepage}
-\lfoot{\ \\IDS \Dienst \ \DienstVersie \ (\DraaiboekVersie-\DraaiboekStatus), \today \\\Copyright}
+\lfoot{\ \\\DienstChange \ \Dienst \ \DienstVersie \ (\DraaiboekVersie-\DraaiboekStatus), \today \\\Copyright}
 \cfoot{\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
 
 %% Use no serif font for text, courier for commands
@@ -91,7 +88,7 @@
 \includegraphics[scale=0.2]{/home/pman/Afbeeldingen/ProrailKopLogo}
 \makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 \vfill
-IDS \Dienst \ \DienstVersie \ \DienstOmgeving\\
+\DienstChange \ \Dienst \ \DienstVersie \ \DienstOmgeving\\
 \ \\
 Draaiboek\\
 \ \\
@@ -129,9 +126,7 @@ DBK
 \hline
 \rowcolor[gray]{0.84}Versie & Naam & Functie & Bedrijf\\
 \hline
-\DraaiboekVersie & Naam & Functie & Bedrijf \\
-\hline
-  & & & \\
+\addcolumn{distributie.txt}{\DraaiboekVersie\\\DraaiboekVersie\\\DraaiboekVersie}
 \hline
 \end{tabular}
 \\
@@ -142,15 +137,18 @@ DBK
 \large
 \begin{tabular}{| l | l |}
 \hline
-\cellcolor[gray]{0.84}Bedrijf & naam bedrijf\\
+\cellcolor[gray]{0.84}Bedrijf & \GoedkeuringBedrijf\\
 \hline
-\cellcolor[gray]{0.84}Naam & Naam goedkeurder\\
+\cellcolor[gray]{0.84}Naam & \GoedkeuringNaam\\
 \hline
-\cellcolor[gray]{0.84}Functie & Functie goedkeurder\\
+\cellcolor[gray]{0.84}Functie & \GoedkeuringFunctie\\
 \hline
-\cellcolor[gray]{0.84}Paraaf & Paraaf goedkeurder\\
+\cellcolor[gray]{0.84}Paraaf & \\
+\cellcolor[gray]{0.84} \  & \\
+\cellcolor[gray]{0.84} \  & \\
+\cellcolor[gray]{0.84} \  & \\
 \hline
-\cellcolor[gray]{0.84}Datum & Datum goedkeuring\\
+\cellcolor[gray]{0.84}Datum & \ \\
 \hline
 \end{tabular}
 
@@ -161,11 +159,11 @@ DBK
 \section{Identificatie}
 \begin{tabular}{| l | l |}
 \hline
-\cellcolor[gray]{0.84}Kenmerk & IDS \Dienst \ \DienstVersie\\
+\cellcolor[gray]{0.84}Kenmerk & \DienstChange \ \Dienst \ \DienstVersie\\
 \hline
 \cellcolor[gray]{0.84}Versie & \DraaiboekVersie\\
 \hline
-\cellcolor[gray]{0.84}Titel & \Dienst \ \DienstOmgeving\\
+\cellcolor[gray]{0.84}Titel & \DraaiboekOmschrijving\\
 \hline
 \end{tabular}
 \section{Systeemoverzicht}
@@ -229,7 +227,6 @@ Hoofdstuk 6 bevat het communicatieplan.
 \addcolumn{nodes.txt}{DBNode1\\DBNode2\\AppNode1\\AppNode2\\AppNode3\\AppNode4\\AppNode5\\AppNode6\\AppNode7\\AppNode8\\AppNode9\\AppNode10}
 \hline
 \end{tabular}
-
 
 \section{Artikelen}
 \begin{tabular}{| l | l | l |}
