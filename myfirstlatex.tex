@@ -177,6 +177,15 @@ Hoofdstuk 6 bevat het communicatieplan.
 \end{tabular}
 \chapter{Benodigdheden}
 \section{Locatie}
+\begin{tabular}{| l | l | l |}
+\hline
+\rowcolor[gray]{0.84}Server & Nodenaam & Omschrijving\\
+\hline
+AppNode 1 & \AppNodeA & Weblogic clusternode 1 \\
+\hline
+AppNode 2 & \AppNodeB & Weblogic clusternode 2 \\
+\hline
+\end{tabular}
 \section{Artikelen}
 \begin{tabular}{| l | l | l |}
 \hline
@@ -196,7 +205,7 @@ Hoofdstuk 6 bevat het communicatieplan.
 \hline
 \rowcolor[gray]{0.84}Stap & Omschrijving\\
 \hline
-1 & Log in op de node met je beheeraccount \\
+1 & Log in op de node \AppNodeA \ met je beheeraccount \\
 \hline
 2 & Vraag listing op: \\
 \hline
@@ -205,6 +214,8 @@ Hoofdstuk 6 bevat het communicatieplan.
 3 & Vraag de uptime van het systeem op: \\
 \hline
 \ & \monofont \$ uptime\\
+\hline
+4 & Log in op de node \AppNodeB \ met je beheeraccount \\
 \hline
 \end{tabular}
 \section{Risico's}
