@@ -1,10 +1,15 @@
+DienstChange Aanmaak DB schema
 Dienst VKL Uit
+DienstEigenaar Patrick Sijm
 DienstVersie 1.0
 DienstOmgeving Beproeving
 DraaiboekVersie 1.0
 DraaiboekStatus Definitief
 DraaiboekOmschrijving Aanmaak DB schema op Beproeving
 DraaiboekAuteur Paul Hupkes / Tom Leonard
+GoedkeuringBedrijf ProRail
+GoedkeuringNaam Peter Mansvelder
+GoedkeuringFunctie Ketenbeheerder Treinbijsturing
 Copyright Copyright (c) 2017 ProRail  
 StartDatum 1 April 2017  
 StartTijd 09:00  

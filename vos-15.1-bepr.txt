@@ -1,18 +1,19 @@
 DienstChange IDS
 Dienst VOS
-DienstVersie 15.1  
-DienstOmgeving Beproeving  
+DienstEigenaar Peter Mansvelder
+DienstVersie 15.1
+DienstOmgeving Beproeving
 DraaiboekVersie 0.2 
-DraaiboekStatus Concept  
-DraaiboekOmschrijving Tweede Concept LaTeX opzet  
-DraaiboekAuteur Peter Mansvelder  
-Copyright Copyright (c) 2017 ProRail  
+DraaiboekStatus Concept
+DraaiboekOmschrijving Tweede Concept LaTeX opzet
+DraaiboekAuteur Peter Mansvelder
+Copyright Copyright (c) 2017 ProRail
 GoedkeuringBedrijf ProRail
 GoedkeuringNaam Peter Mansvelder
 GoedkeuringFunctie Ketenbeheerder Treinbijsturing
-StartDatum 1 April 2017  
-StartTijd 09:00  
-EindTijd 17:00  
+StartDatum 1 April 2017
+StartTijd 09:00
+EindTijd 17:00
 AppNodeA pdccmf.dc.post21.nl
 AppNodeB pdccmg.dc.post21.nl
 AppNodeC pdccmh.dc.post21.nl

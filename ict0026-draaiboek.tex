@@ -15,6 +15,7 @@
 \usepackage{array}
 \usepackage{colortbl}
 
+%Function to read in text to table
 \ExplSyntaxOn
 \NewDocumentCommand{\addcolumn}{mm}
  {
@@ -49,6 +50,39 @@
    }
   % deliver the result
   \tl_use:N \l__fabian_table_body_tl
+ }
+
+\ExplSyntaxOff
+
+
+%Function to read in text to table
+\ExplSyntaxOn
+\NewDocumentCommand{\addcolumnfile}{mm}
+ {
+  % #1 is the file to read
+  \peter_addcolumnfile:nn { #1 }
+ }
+
+% some variables
+\seq_new:N \l__peter_additions_seq
+\tl_new:N \l__peter_table_body_tl
+\tl_new:N \l__peter_item_tl
+\ior_new:N \g_peter_import_stream
+
+\cs_new_protected:Npn \peter_addcolumnfile:nn #1
+ {
+  % clear the variable containing the table body
+  \tl_clear:N \l__peter_table_body_tl
+  % start reading the file
+  \ior_open:Nn \g_peter_import_stream { #1 }
+  % at each line ...
+  \ior_map_inline:Nn \g_peter_import_stream
+   {
+    % 1. add the line and the trailing \\
+    \tl_put_right:Nn \l__peter_table_body_tl { ##1 \\ \hline }
+   }
+  % deliver the result
+  \tl_use:N \l__peter_table_body_tl
  }
 
 \ExplSyntaxOff
@@ -95,8 +129,26 @@ Draaiboek\\
 DBK
 \makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 \vfill
-}
+\small
 \author{ICT Operations}
+\begin{tabular}{| l | l |}
+\hline
+\cellcolor[gray]{0.84}Kenmerk & \DraaiboekOmschrijving\\
+\hline
+\cellcolor[gray]{0.84}Auteur & \DraaiboekAuteur\\
+\hline
+\cellcolor[gray]{0.84}Eigenaar & \DienstEigenaar\\
+\hline
+\cellcolor[gray]{0.84}Versie & \DraaiboekVersie\\
+\hline
+\cellcolor[gray]{0.84}Versiedatum & \today\\
+\hline
+\cellcolor[gray]{0.84}Status & \DraaiboekStatus\\
+\hline
+\multicolumn{2}{|l|}{\large \cellcolor[gray]{0.84} \Copyright} \\
+\hline
+\end{tabular}
+}
 
 \maketitle
 
@@ -231,13 +283,12 @@ Hoofdstuk 6 bevat het communicatieplan.
 \section{Artikelen}
 \begin{tabular}{| l | l | l |}
 \hline
-\rowcolor[gray]{0.84}Aantal & Artikelnummer & Omschrijving\\
+\rowcolor[gray]{0.84}Aantal & Artikel & Omschrijving\\
 \hline
-\ & \ & \ \\
-\hline
-\ & \ & \ \\
+\addcolumnfile{artikelen.txt}
 \hline
 \end{tabular}
+
 \section{Voorbereiding}
 \section{Randvoorwaarden}
 \chapter{Werkzaamheden}

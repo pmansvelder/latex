@@ -10,5 +10,6 @@ vos-b: vos-15.1-bepr.txt
 b2b-b: b2b-bepr.txt
 	./convert_txt.sh b2b-bepr.txt ids-parameters.tex
 	cp vosnodes_b.txt nodes.txt
+	cp b2b_artikelen.txt artikelen.txt
 avp: avp-database.txt
 	./convert_txt.sh avp-database.txt ids-parameters.tex
