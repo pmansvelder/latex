@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.3.14)  14 MAR 2017 11:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.3.14)  14 MAR 2017 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,24 +434,24 @@ Hoofdstuk 7.
 File: images/rcu_figuur9.png Graphic file (type png)
 
 <use images/rcu_figuur9.png>
-Package pdftex.def Info: images/rcu_figuur9.png used on input line 300.
+Package pdftex.def Info: images/rcu_figuur9.png used on input line 301.
 (pdftex.def)             Requested size: 400.3748pt x 103.34584pt.
 
 <images/rcu_figuur10.png, id=66, 439.4016pt x 159.35535pt>
 File: images/rcu_figuur10.png Graphic file (type png)
 
 <use images/rcu_figuur10.png>
-Package pdftex.def Info: images/rcu_figuur10.png used on input line 304.
+Package pdftex.def Info: images/rcu_figuur10.png used on input line 305.
 (pdftex.def)             Requested size: 439.40051pt x 159.35493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--326
+Underfull \hbox (badness 10000) in paragraph at lines 313--327
 
  []
 
 [14
 
  <./images/rcu_figuur9.png> <./images/rcu_figuur10.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 332--352
+Underfull \hbox (badness 10000) in paragraph at lines 333--353
 
  []
 
@@ -461,7 +461,7 @@ Hoofdstuk 8.
 File: images/rcu_figuur11.png Graphic file (type png)
 
 <use images/rcu_figuur11.png>
-Package pdftex.def Info: images/rcu_figuur11.png used on input line 388.
+Package pdftex.def Info: images/rcu_figuur11.png used on input line 389.
 (pdftex.def)             Requested size: 342.55894pt x 228.37263pt.
  [16
 
@@ -470,35 +470,35 @@ Package pdftex.def Info: images/rcu_figuur11.png used on input line 388.
 File: images/rcu_figuur12.png Graphic file (type png)
 
 <use images/rcu_figuur12.png>
-Package pdftex.def Info: images/rcu_figuur12.png used on input line 401.
+Package pdftex.def Info: images/rcu_figuur12.png used on input line 402.
 (pdftex.def)             Requested size: 432.17355pt x 209.94383pt.
 
 <images/rcu_figuur13_14.png, id=78, 391.7034pt x 333.8874pt>
 File: images/rcu_figuur13_14.png Graphic file (type png)
 
 <use images/rcu_figuur13_14.png>
-Package pdftex.def Info: images/rcu_figuur13_14.png used on input line 441.
+Package pdftex.def Info: images/rcu_figuur13_14.png used on input line 442.
 (pdftex.def)             Requested size: 391.70244pt x 333.88658pt.
  [17 <./images/rcu_figuur12.png>]
 <images/rcu_figuur15.png, id=82, 514.20105pt x 762.4485pt>
 File: images/rcu_figuur15.png Graphic file (type png)
 
 <use images/rcu_figuur15.png>
-Package pdftex.def Info: images/rcu_figuur15.png used on input line 445.
+Package pdftex.def Info: images/rcu_figuur15.png used on input line 446.
 (pdftex.def)             Requested size: 462.77666pt x 686.19731pt.
  [18 <./images/rcu_figuur13_14.png>]
 <images/rcu_figuur16.png, id=87, 515.526pt x 693.0693pt>
 File: images/rcu_figuur16.png Graphic file (type png)
 
 <use images/rcu_figuur16.png>
-Package pdftex.def Info: images/rcu_figuur16.png used on input line 447.
+Package pdftex.def Info: images/rcu_figuur16.png used on input line 448.
 (pdftex.def)             Requested size: 463.96912pt x 623.7566pt.
  [19 <./images/rcu_figuur15.png>] [20 <./images/rcu_figuur16.png>] <images/rcu_
 figuur17.jpg, id=94, 1055.44313pt x 603.75563pt>
 File: images/rcu_figuur17.jpg Graphic file (type jpg)
 
 <use images/rcu_figuur17.jpg>
-Package pdftex.def Info: images/rcu_figuur17.jpg used on input line 455.
+Package pdftex.def Info: images/rcu_figuur17.jpg used on input line 456.
 (pdftex.def)             Requested size: 422.16978pt x 241.49797pt.
  [21 <./images/rcu_figuur17.jpg>] (./h0norm.aux) ) 
 Here is how much of TeX's memory you used:
@@ -519,7 +519,7 @@ xlive/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/lm/lmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmssbx
 10.pfb>
-Output written on h0norm.pdf (22 pages, 12151047 bytes).
+Output written on h0norm.pdf (22 pages, 12150442 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
