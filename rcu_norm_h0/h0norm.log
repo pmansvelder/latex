@@ -1,15 +1,16 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.7)  14 MAR 2017 08:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.3.14)  14 MAR 2017 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **h0norm.tex
 (./h0norm.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 29 language(s) loaded.
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -25,23 +26,28 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/02/24 3.9q The Babel package
+Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-dutch/dutch.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel/dutch.ldf
 Language: dutch 2005/03/30 v3.8i Dutch support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/02/24 3.9q Babel common definitions
+File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Dutch'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@dutch = a dialect from \language0
 Package babel Info: Making " an active character on input line 132.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen104
 \extrarowheight=\dimen105
 \NC@list=\toks14
@@ -49,12 +55,12 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \backup@length=\skip44
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 143.
+Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -71,22 +77,22 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \minrowclearance=\skip45
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen106
 \Gin@req@width=\dimen107
@@ -104,74 +110,73 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             only a restricted character set as indicated.
 (textcomp)             Family '?' is the default used for unknown fonts.
 (textcomp)             See the documentation for details.
-Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
-LaTeX Info: Redefining \oldstylenums on input line 334.
-Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
-Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
-Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
-Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
-Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
-Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
-Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
-Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
-Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
-Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
-Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
-Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
-Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
-Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
-Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
-Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
-Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
-Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
-Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
-Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
-Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
-Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
-Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
-Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
 
-Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
-Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
-Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
-Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
-Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
-Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
-Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
-Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
-Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
-Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
-Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
-Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
-Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
-Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
-Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
-Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
-Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
-Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
-Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
-Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
-Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -217,7 +222,7 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 20.
 
@@ -313,7 +318,7 @@ e
 
 LaTeX Font Info:    Try loading font information for OT1+lmss on input line 22.
 
-(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+(/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <images/rcu_logo.png, id=1, 100.375pt x 135.50626pt>
@@ -334,8 +339,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/rcu_logo.png>]
-(./h0norm.toc
+{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/rcu_log
+o.png>] (./h0norm.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 3.
 )
@@ -350,102 +355,174 @@ Hoofdstuk 1.
 
 ]
 Hoofdstuk 2.
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 89.
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 97.
 
-(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+(/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
-
- []
-
-
-Overfull \hbox (6.20087pt too wide) in paragraph at lines 99--134
+Overfull \hbox (6.20087pt too wide) in paragraph at lines 106--141
 [][] 
  []
 
 [3
 
-]
+] [4]
 Hoofdstuk 3.
-<images/rcu_figuur1.jpg, id=25, 1065.9825pt x 782.925pt>
+<images/rcu_figuur1.jpg, id=28, 1065.9825pt x 782.925pt>
 File: images/rcu_figuur1.jpg Graphic file (type jpg)
 
 <use images/rcu_figuur1.jpg>
-Package pdftex.def Info: images/rcu_figuur1.jpg used on input line 155.
+Package pdftex.def Info: images/rcu_figuur1.jpg used on input line 162.
 (pdftex.def)             Requested size: 213.19272pt x 156.58223pt.
- [4
+ [5
 
  <./images/rcu_figuur1.jpg>]
-<images/rcu_figuur2.jpg, id=29, 1711.89563pt x 1607.25468pt>
+<images/rcu_figuur2.jpg, id=32, 1711.89563pt x 1607.25468pt>
 File: images/rcu_figuur2.jpg Graphic file (type jpg)
 
 <use images/rcu_figuur2.jpg>
-Package pdftex.def Info: images/rcu_figuur2.jpg used on input line 169.
+Package pdftex.def Info: images/rcu_figuur2.jpg used on input line 176.
 (pdftex.def)             Requested size: 342.37306pt x 321.44524pt.
 
-<images/rcu_figuur3.jpg, id=30, 1381.41093pt x 746.03719pt>
+<images/rcu_figuur3.jpg, id=33, 1381.41093pt x 746.03719pt>
 File: images/rcu_figuur3.jpg Graphic file (type jpg)
 
 <use images/rcu_figuur3.jpg>
-Package pdftex.def Info: images/rcu_figuur3.jpg used on input line 173.
+Package pdftex.def Info: images/rcu_figuur3.jpg used on input line 180.
 (pdftex.def)             Requested size: 276.2773pt x 149.20479pt.
- [5 <./images/rcu_figuur2.jpg> <./images/rcu_figuur3.jpg>] <images/rcu_figuur4.
-jpg, id=34, 1291.82625pt x 861.2175pt>
+ [6 <./images/rcu_figuur2.jpg> <./images/rcu_figuur3.jpg>] <images/rcu_figuur4.
+jpg, id=38, 1291.82625pt x 861.2175pt>
 File: images/rcu_figuur4.jpg Graphic file (type jpg)
 
 <use images/rcu_figuur4.jpg>
-Package pdftex.def Info: images/rcu_figuur4.jpg used on input line 192.
+Package pdftex.def Info: images/rcu_figuur4.jpg used on input line 199.
 (pdftex.def)             Requested size: 258.36067pt x 172.24045pt.
- [6 <./images/rcu_figuur4.jpg>] [7]
+ [7 <./images/rcu_figuur4.jpg>] [8]
 Hoofdstuk 4.
-<images/rcu_figuur5.png, id=42, 449.0376pt x 220.1826pt>
+<images/rcu_figuur5.png, id=45, 449.0376pt x 220.1826pt>
 File: images/rcu_figuur5.png Graphic file (type png)
 
 <use images/rcu_figuur5.png>
-Package pdftex.def Info: images/rcu_figuur5.png used on input line 225.
+Package pdftex.def Info: images/rcu_figuur5.png used on input line 234.
 (pdftex.def)             Requested size: 449.03648pt x 220.18205pt.
- [8
+ [9
 
 ]
-<images/rcu_figuur6.png, id=46, 437.4744pt x 172.9662pt>
+<images/rcu_figuur6.png, id=49, 437.4744pt x 172.9662pt>
 File: images/rcu_figuur6.png Graphic file (type png)
 
 <use images/rcu_figuur6.png>
-Package pdftex.def Info: images/rcu_figuur6.png used on input line 231.
+Package pdftex.def Info: images/rcu_figuur6.png used on input line 240.
 (pdftex.def)             Requested size: 437.47331pt x 172.96577pt.
- [9 <./images/rcu_figuur5.png> <./images/rcu_figuur6.png>]
+ [10 <./images/rcu_figuur5.png> <./images/rcu_figuur6.png>]
 Hoofdstuk 5.
-[10
+[11
 
-] <images/rcu_figuur7.png, id=54, 435.5472pt x 216.81pt>
+] <images/rcu_figuur7.png, id=57, 435.5472pt x 216.81pt>
 File: images/rcu_figuur7.png Graphic file (type png)
 
 <use images/rcu_figuur7.png>
-Package pdftex.def Info: images/rcu_figuur7.png used on input line 270.
+Package pdftex.def Info: images/rcu_figuur7.png used on input line 279.
 (pdftex.def)             Requested size: 435.54611pt x 216.80946pt.
- [11 <./images/rcu_figuur7.png>] (./h0norm.aux) ) 
+ [12 <./images/rcu_figuur7.png>]
+Hoofdstuk 6.
+[13
+
+]
+Hoofdstuk 7.
+<images/rcu_figuur9.png, id=65, 400.3758pt x 103.3461pt>
+File: images/rcu_figuur9.png Graphic file (type png)
+
+<use images/rcu_figuur9.png>
+Package pdftex.def Info: images/rcu_figuur9.png used on input line 300.
+(pdftex.def)             Requested size: 400.3748pt x 103.34584pt.
+
+<images/rcu_figuur10.png, id=66, 439.4016pt x 159.35535pt>
+File: images/rcu_figuur10.png Graphic file (type png)
+
+<use images/rcu_figuur10.png>
+Package pdftex.def Info: images/rcu_figuur10.png used on input line 304.
+(pdftex.def)             Requested size: 439.40051pt x 159.35493pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--326
+
+ []
+
+[14
+
+ <./images/rcu_figuur9.png> <./images/rcu_figuur10.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 332--352
+
+ []
+
+[15]
+Hoofdstuk 8.
+<images/rcu_figuur11.png, id=73, 342.5598pt x 228.3732pt>
+File: images/rcu_figuur11.png Graphic file (type png)
+
+<use images/rcu_figuur11.png>
+Package pdftex.def Info: images/rcu_figuur11.png used on input line 388.
+(pdftex.def)             Requested size: 342.55894pt x 228.37263pt.
+ [16
+
+ <./images/rcu_figuur11.png>]
+<images/rcu_figuur12.png, id=77, 432.1746pt x 209.94435pt>
+File: images/rcu_figuur12.png Graphic file (type png)
+
+<use images/rcu_figuur12.png>
+Package pdftex.def Info: images/rcu_figuur12.png used on input line 401.
+(pdftex.def)             Requested size: 432.17355pt x 209.94383pt.
+
+<images/rcu_figuur13_14.png, id=78, 391.7034pt x 333.8874pt>
+File: images/rcu_figuur13_14.png Graphic file (type png)
+
+<use images/rcu_figuur13_14.png>
+Package pdftex.def Info: images/rcu_figuur13_14.png used on input line 441.
+(pdftex.def)             Requested size: 391.70244pt x 333.88658pt.
+ [17 <./images/rcu_figuur12.png>]
+<images/rcu_figuur15.png, id=82, 514.20105pt x 762.4485pt>
+File: images/rcu_figuur15.png Graphic file (type png)
+
+<use images/rcu_figuur15.png>
+Package pdftex.def Info: images/rcu_figuur15.png used on input line 445.
+(pdftex.def)             Requested size: 462.77666pt x 686.19731pt.
+ [18 <./images/rcu_figuur13_14.png>]
+<images/rcu_figuur16.png, id=87, 515.526pt x 693.0693pt>
+File: images/rcu_figuur16.png Graphic file (type png)
+
+<use images/rcu_figuur16.png>
+Package pdftex.def Info: images/rcu_figuur16.png used on input line 447.
+(pdftex.def)             Requested size: 463.96912pt x 623.7566pt.
+ [19 <./images/rcu_figuur15.png>] [20 <./images/rcu_figuur16.png>] <images/rcu_
+figuur17.jpg, id=94, 1055.44313pt x 603.75563pt>
+File: images/rcu_figuur17.jpg Graphic file (type jpg)
+
+<use images/rcu_figuur17.jpg>
+Package pdftex.def Info: images/rcu_figuur17.jpg used on input line 455.
+(pdftex.def)             Requested size: 422.16978pt x 241.49797pt.
+ [21 <./images/rcu_figuur17.jpg>] (./h0norm.aux) ) 
 Here is how much of TeX's memory you used:
- 3152 strings out of 494374
- 45410 string characters out of 6164955
- 112291 words of memory out of 5000000
- 6416 multiletter control sequences out of 15000+600000
- 23739 words of font info for 40 fonts, out of 8000000 for 9000
- 350 hyphenation exceptions out of 8191
- 38i,8n,28p,683b,224s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx
+ 3082 strings out of 495063
+ 44908 string characters out of 3182201
+ 106214 words of memory out of 3000000
+ 6203 multiletter control sequences out of 15000+200000
+ 23739 words of font info for 40 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 38i,8n,28p,695b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
+lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/lm/lmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmssbx
 10.pfb>
-Output written on h0norm.pdf (12 pages, 6068205 bytes).
+Output written on h0norm.pdf (22 pages, 12151047 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

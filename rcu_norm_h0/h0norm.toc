@@ -4,17 +4,24 @@
 \contentsline {section}{\numberline {1.2}Afkortingen en begrippen}{2}
 \contentsline {chapter}{\numberline {2}Inleiding}{3}
 \contentsline {section}{\numberline {2.1}Systeemnormen}{3}
-\contentsline {chapter}{\numberline {3}Modules}{4}
-\contentsline {section}{\numberline {3.1}De rechte module met spoordijk}{4}
-\contentsline {subsection}{\numberline {3.1.1}Opbouw poten}{5}
-\contentsline {section}{\numberline {3.2}De rechte module zonder spoordijk}{6}
-\contentsline {section}{\numberline {3.3}Overgangsmodules}{6}
-\contentsline {section}{\numberline {3.4}De hoekmodule}{6}
-\contentsline {section}{\numberline {3.5}De stationsmodules}{7}
-\contentsline {chapter}{\numberline {4}Het leggen van de rails}{8}
-\contentsline {section}{\numberline {4.1}Gebruikte rail}{8}
-\contentsline {section}{\numberline {4.2}Montage}{8}
-\contentsline {chapter}{\numberline {5}Normen elektrische installatie}{10}
-\contentsline {section}{\numberline {5.1}De 230 volt voeding van de baan}{10}
-\contentsline {section}{\numberline {5.2}Het laagspanningsgedeelte van de baan}{10}
-\contentsline {subsection}{\numberline {5.2.1}Bezetmeldingsdraden, Remstukken en stopstukken}{10}
+\contentsline {chapter}{\numberline {3}Modules}{5}
+\contentsline {section}{\numberline {3.1}De rechte module met spoordijk}{5}
+\contentsline {subsection}{\numberline {3.1.1}Opbouw poten}{6}
+\contentsline {section}{\numberline {3.2}De rechte module zonder spoordijk}{7}
+\contentsline {section}{\numberline {3.3}Overgangsmodules}{7}
+\contentsline {section}{\numberline {3.4}De hoekmodule}{7}
+\contentsline {section}{\numberline {3.5}De stationsmodules}{8}
+\contentsline {chapter}{\numberline {4}Het leggen van de rails}{9}
+\contentsline {section}{\numberline {4.1}Gebruikte rail}{9}
+\contentsline {section}{\numberline {4.2}Montage}{9}
+\contentsline {chapter}{\numberline {5}Normen elektrische installatie}{11}
+\contentsline {section}{\numberline {5.1}De 230 volt voeding van de baan}{11}
+\contentsline {section}{\numberline {5.2}Het laagspanningsgedeelte van de baan}{11}
+\contentsline {subsection}{\numberline {5.2.1}Bezetmeldingsdraden, Remstukken en stopstukken}{11}
+\contentsline {chapter}{\numberline {6}Beveiliging van de baan}{13}
+\contentsline {chapter}{\numberline {7}De bovenleiding}{14}
+\contentsline {section}{\numberline {7.1}Normen bovenleiding}{15}
+\contentsline {chapter}{\numberline {8}Opbouw van het landschap}{16}
+\contentsline {section}{\numberline {8.1}Volgorde bij de opbouw van het landschap}{16}
+\contentsline {section}{\numberline {8.2}Landschapsnormen}{17}
+\contentsline {section}{\numberline {8.3}Optreden bij tentoonstellingen}{21}
