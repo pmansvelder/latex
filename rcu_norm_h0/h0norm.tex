@@ -15,7 +15,7 @@
 \captionsetup[figure]{slc=off} % "slc" is an abbreviation for "singlelinecheck"
 
 \usepackage{geometry}
-\geometry{a4paper,total={180mm,267mm},left=20mm,top=10mm}
+\geometry{a4paper,total={180mm,257mm},left=20mm,top=20mm}
 
 %% Use no serif font for text, courier for commands
 \newcommand*{\myfont}{\fontfamily{lmss}\normalsize\selectfont}
@@ -23,8 +23,11 @@
 
 \newcommand*{\marklin}{M\"{a}rklin}
 \newcommand*{\trace}{trac\'{e} }
+\newcommand*{\isqc}{I$^{2}$C}
 
 \setlength{\parindent}{0pt}
+
+\pagestyle{headings}
 
 \begin{document}
 
@@ -71,7 +74,7 @@ Hoofdstuk 1 geeft de opbouw en overzicht van dit document.
 
 Hoofdstuk 2 geeft een korte inleiding tot het systeem en de normen.
 
-Hoofdstuk 3 beschrijft de modules.
+Hoofdstuk 3 beschrijft de mechanische opbouw van de modules.
 
 Hoofdstuk 4 beschrijft het leggen van de rails.
 
@@ -83,7 +86,9 @@ Hoofdstuk 7 beschrijft de bovenleiding.
 
 Hoofdstuk 8 beschrijft de opbouw van het landschap.
 
-Hoofdstuk 9 beschrijft de gebruikte centrale.
+Hoofdstuk 9 beschrijft de aansluiting van de modules en de booster.
+
+Hoofdstuk 10 beschrijft de gebruikte digitale centrale.
 
 \section{Afkortingen en begrippen}
 \begin{tabular}{| l |p{13cm}|}
@@ -94,19 +99,29 @@ DCC & Digital Control Systeem, het NMRA-standaard digitale systeem voor modeltre
 \hline
 MM & Motorola, het door \marklin gebruikte digitale systeem\\
 \hline
+MDRRC-II&Model Digital RailRoad Control, een door Robert Evers gemaakte centrale die zowel DCC als Motorola protocol ondersteunt. Versie II is gebaseerd op een microcontroller met touchscreen.\\
+\hline
+RCU&RailClub Utrecht\\
+\hline
+BNL&Beneluxspoor, een forum voor Nederlands Modelspoorders\\
+\hline
+S88&Een door \marklin ge"{i}ntroduceerde standaard voor bezetmelders (eigenlijk massamelders)\\
+\hline
+\isqc &Inter-Integrated Circuit, een door Philips ge"{i}ntroduceerde computer bus voor seri"{e}le communicatie\\
+\hline
 \end{tabular}
 
 \chapter{Inleiding}
 
-M-trak is een modulair systeem voor half nul met een middenrail, waarbij de beide spoorstaven elektrisch gescheiden zijn. Bij de RailClub Utrecht wordt dit systeem gebruikt om zowel 2- als 3-rail systeem rollend materieel te laten rijden.
+M-track is een modulair systeem voor half nul met een middenrail, waarbij de beide spoorstaven elektrisch gescheiden zijn. Bij de RailClub Utrecht wordt dit systeem gebruikt om zowel 2- als 3-rail systeem rollend materieel te laten rijden.
 
-Dit document beschrijft de norm voor M-trak, die we bij Railclub Utrecht gebruiken. Voor zaken die niet in de norm geregeld zijn is het zinvol die eerst met de moduleco\"{o}rdinator te overleggen.
+Dit document beschrijft de norm voor M-track, die we bij Railclub Utrecht gebruiken. Voor zaken die niet in de norm geregeld zijn is het zinvol die eerst met de moduleco\"{o}rdinator te overleggen.
 
 Voor de leden die besluiten mee te doen met deze modulebaan is het raadzaam eerst te kijken hoe dingen in elkaar steken en te vragen als er iets niet duidelijk is.
 
 \section{Systeemnormen}
 
-De systeemnormen van M-trak bestaan uit:
+De systeemnormen van M-track bestaan uit:
 \begin{itemize}
 \item Het gebruikte (digitale) systeem
 \item Een genormaliseerde kopkant van de modules;
@@ -185,6 +200,12 @@ Dit zijn de gebruikte profielen van de kopschotten:
   {\includegraphics[scale=0.25]{images/rcu_vlak_asym}}
 \end{figure}
 
+\begin{figure}[!ht]
+  \captionbox
+  {Jeugdmodule, asymmetrisch\label{im:jeugdbak}}
+  {\includegraphics[scale=0.9]{images/jeugdbak}}
+\end{figure}
+
 \section{De rechte module met spoordijk}
 De rechte module voor de vrije baan, deze kan een lengte hebben van 580 mm, 890 mm of de ''standaard'' lengte van 1200 mm.
 Andere lengtematen zijn toegestaan, alleen moet dan rekening gehouden worden met de rijdraadlengte die gebruikt wordt. De rijdraad bij de overgang van de modulen is 270mm lang en op de modulen 310mm.
@@ -218,11 +239,16 @@ Plaatsen van 3 mm ringen niet vergeten (dikte neopreen).
 Hierna kan de moer die onderaan de mast zit ''vast'' worden gedraaid.
 
 \section{De rechte module zonder spoordijk}
-Een module zonder spoordijk, met 2 sporen die aan een kant van de module worden gelegd, zodat er meer ruimte is voor scenery aan de achterkant. Dit zijn de oude jeugdmodules.
+Een module zonder spoordijk, met 2 sporen die aan een kant van de module worden gelegd, zodat er meer ruimte is voor scenery aan de achterkant. Dit zijn de oude jeugdmodules (zie figuur \ref{im:jeugdbak} voor profiel).
 De hartmaat van de rails is hierbij hetzelfde als de andere modules: 57mm. De rails wordt dicht tegen de voorkant va de bak aangelegd, waarbij de afstand tussen de voorkant van de module en de 1e rail 100mm bedraagt.
 
 \section{Overgangsmodules}
-Overgangsmodules tussen de twee verschillende soorten modules (met en zonder spoordijk).
+Overgangsmodules tussen de twee verschillende soorten modules (met en zonder spoordijk). Dit kunnen dus verschillende overgangen zijn:
+\begin{itemize}
+\item Jeugdbak naar symmetrische spoordijk
+\item Jeugdbak naar asymmetrische spoordijk
+\item Symmetrische spoordijk naar asymmetrische spoordijk
+\end{itemize}
 
 \section{De hoekmodule}
 De standaard hoekmodule heeft een hoek van $45$\textdegree. Eventueel is een andere hoek ook mogelijk.
@@ -233,7 +259,7 @@ Het maken van een standaard hoekmodule is lastiger dan van een rechte module. Ee
 Bij de beschrijving hierna wordt uitgegaan van een standaard hoekmodule. Deze module heeft een hoek van $45$\textdegree. De grootste lengte van de bak is 875 mm en de kleinste lengte 415 mm. De kopzijde is gelijk aan de standaard kopschotten.
 De hoek tussen een kopschot en een zijschot is 22,50. Er zijn twee mogelijkheden om dit te realiseren. Men zaagt een balkje onder een hoek of stukjes multiplex. Zie figuur \ref{figuur4}.
 
-\begin{figure}[h]
+\begin{figure}[!ht]
   \captionbox
   {Constructie hoekmodule\label{figuur4}}
   {\includegraphics[scale=0.2]{images/rcu_figuur4}}
@@ -256,7 +282,7 @@ De rest van de module wordt opgebouwd volgens de open raam bouwmethode.
 \subsection{Opbouw poten}
 De poten voor de baan zijn allemaal op dezelfde wijze opgebouwd en kunnen zonder problemen met elkaar verwisseld worden. In de bakken zit een standaard constructie waarin de poten geschoven kunnen worden en vastgezet, zie figuur \ref{figuur2}.
 
-\begin{figure}[h]
+\begin{figure}[!ht]
   \captionbox
   {Constructie poten\label{figuur2}}
   {\includegraphics[scale=0.3]{images/rcu_figuur2}}
@@ -264,7 +290,7 @@ De poten voor de baan zijn allemaal op dezelfde wijze opgebouwd en kunnen zonder
 
 De poten kunnen zowel van hout als metaal gemaakt worden en zijn vierkant De poot heeft een dikte van 35 mm en de schacht waarin hij schuift 36 mm. Hierdoor kan de poot altijd makkelijk in en uit genomen worden. Om te voorkomen dat de poot er op het verkeerde moment uitschuift wordt deze met een vleugelboutje vastgezet. Om te voorkomen dat dit vleugelboutje steeds dieper het hout wordt ingedraaid wordt op die plaats een metalen plaatje aangebracht. Zie figuur \ref{figuur3}.
 
-\begin{figure}[h]
+\begin{figure}[!ht]
   \captionbox
   {Bovenzijde poten\label{figuur3}}
   {\includegraphics[scale=0.2]{images/rcu_figuur3}}
@@ -312,6 +338,7 @@ Deze oplossing is in de praktijk zeer betrouwbaar gebleken.
 Liggen de spoorstaven goed dan kunnen de draden aan de spoorstaven worden gesoldeerd. Het solderen aan de spoorstaven vraagt enige voorbereiding. Eerst moet op de plaats waar later gesoldeerd wordt de spoorstaaf schoon geschuurd worden. Daarna wordt met gebruikmaking van verdund fosforzuur een klein beetje soldeertin op de spoorstaaf aangebracht. Hierna wordt het vooraf vertinde draadje aan de spoorstaaf vast gesoldeerd. Vervolgens wordt een klein gaatje naast de rails geboord en het draadje er doorheen geschoven. Nu steken er onder uit het hout van het baan\trace drie draden, een rode, een bruine en een zwarte.
 
 \chapter{Normen elektrische installatie}
+\label{ch:elektra}
 
 De elektrische installatie bestaat uit twee delen.
 
@@ -333,26 +360,82 @@ Er lopen 4 draden tussen elke bak:
 Deze twee draden worden verbonden middels Wieland ST16 stekkers.
 
 \item Een grijze of violette draad, deze is voor de binnenste railstaaf van de achterste rails
-\item Een gele draad, deze is voor de binnenste railstaaf van de voorste rails
+\item Een gele draad, deze is voor de binnenste railstaaf van de voorste rails.\\
+De laatste 2 draden worden aan groene banaanstekker-chassisdelen.verbonden.
 \end{itemize}
-Alles 1mm$^{2}$ (snoer)
+Alles 1mm$^{2}$ (snoer). 
+
+\subsection{Modules zonder wissels}
+Er zijn 2 soorten basismodules zonder wissels: met en zonder seinen. De basismodule met seinen heeft 4 bezetmeldersecties.
+De secties worden aangesloten aan een 4 mm chassisdeel, waar een banaanstekker in past.
+Een basismodule zonder seinen heeft aan elke kant 2 van zulke aansluitingen, die links en rechts zijn doorverbonden, dus 2 secties.
+Een basismodule met seinen heeft ook aan elke kant 2 aansluitingen, maar deze zijn niet doorverbonden, dus er zijn 4 secties.
+
+\subsection{Modules met wissels}
+Een module met wissels is ook een soort basismodule: ook hier zijn 4 bezetmeldersecties, waarbij het doorgaande spoor een sectie is, en het afbuigende spoor een andere. Voor het aansluiten is deze hetzelfde als een basismodule met seinen.
+Een module met wissels heeft dus geen seinen, de seinen staan op de module voor de wissels, zodat een trein altijd stopt op deze module, en nooit op de module met wissels. De wissels kunnen dus kort na het begin van de module geplaatst worden.
+Treinen op het afbuigende spoor rijden door op de module n\'{a} de module met wissels, en stoppen dus nooit op deze module.
+De bediening van de wissels moet gebeuren door schakelaars op de module zelf, met behulp van een externe voeding. Deze mag niet uit de baanspanning worden gevoed. Deze schakelaars moeten 'puls'-schakelaars zijn, dus mogen niet in een vaste positie blijven staan.
+Verder moet de bediening aan te sluiten zijn op een wisseldecoder, zodat de wissels ook digitaal bestuurd kunnen worden. Beide mogelijkheden moeten parallel inzetbaar zijn, dus zelfs met digitale besturing moet handbediening nog mogelijk zijn.
+Er is alleen een tekening gemaakt van 1 variant, type '3a'. Desgewenst kunnen ook de andere varianten uitgetekend worden:
+
+\begin{tabular}{| l | p{14cm} |}
+\hline
+Basismodule 3a&Links 2 sporen, rechts 4 sporen\\
+\hline
+Basismodule 3b&Links 4 sporen, rechts 2 sporen\\
+\hline
+Basismodule 3c&Links 2 sporen, rechts 3 sporen (linkerspoor met wissel)\\
+\hline
+Basismodule 3d&Links 2 sporen, rechts 3 sporen (rechterspoor met wissel)\\
+\hline
+Basismodule 3e&Links 3 sporen, rechts 2 sporen (linkerspoor met wissel)\\
+\hline
+Basismodule 3f&Links 3 sporen, rechts 2 sporen (rechterspoor met wissel)\\
+\hline
+Basismodule 3g&Links 3 sporen, rechts 3 sporen (linkerspoor met wissel naar links, rechterspoor met wissel naar rechts)\\
+\hline
+Basismodule 3h&Links 3 sporen, rechts 3 sporen ( rechterspoor met wissel naar links, linkerspoor met wissel naar rechts)\\
+\hline
+\end{tabular}
 
 \subsection{Bezetmeldingsdraden, Remstukken en stopstukken}
 Deze worden voorzien van  violet en grijs  0,5 mm$^{2}$ (kabel/massief tbv RJ45 chassis)
 
 De doorsnede van de draden voor de ringleiding stopcontacten en stekker moet minimaal 0,65 mm$^{2}$ zijn, omdat anders een te groot spanningsverlies ontstaat of de draden worden te heet. Dikkere draad mag natuurlijk ook.
 Het snoer tussen de bakken en de stekker moet van soepel draad zijn, en eveneens tenminste 0,65 mm$^{2}$ dik zijn.
-De overgang van de ringleiding naar het snoer wordt gemaakt m.b.v. een kroonsteen. Omdat de sporen behalve via de stekkerverbinding op geen enkele andere wijze met elkaar verbonden zijn, moeten op elke module de sporen, op twee plaatsen per rails, met de ringleiding verbonden worden. De ringleiding kan eenvoudig via de soldeerogen geleid worden en daar de verbinding gemaakt worden. In de groene draad van de ringleiding is het handig om een soldeeroog op te nemen om later wissels en seinen aan te kunnen sluiten. Zie figuur \ref{figuur7}.
 
-\begin{figure}[ht]
-  \captionbox
-  {Bekabeling module\label{figuur7}}
-  {\includegraphics[scale=1.0]{images/rcu_figuur7}}
-\end{figure}
+De overgang van de ringleiding naar het snoer wordt gemaakt m.b.v. een kroonsteen. Omdat de sporen behalve via de stekkerverbinding op geen enkele andere wijze met elkaar verbonden zijn, moeten op elke module de sporen, op twee plaatsen per rails, met de ringleiding verbonden worden. De ringleiding moet separaat van de rails doorverbonden worden van het ene naar het andere eind van de bak. Zie figuur \ref{im:modulebak}.
 
 Het is raadzaam om het snoer bij de kroonsteen van een trekontlasting te voorzien, om lostrekken van het snoer uit de kroonsteen te voorkomen.
 
 Het op twee plaatsen aansluiten van de rails per module maakt de installatie bedrijfszekerder. Wanneer er ook in de transformator een beveiliging tegen kortsluiting is ingebouwd, voldoet de installatie aan de voorschriften die bij de vereniging gelden. Dit voorgaande geldt voor zowel gekochte als voor zelfbouw voedingen!
+
+\section{Aansluiten Modules}
+Op de volgende pagina's worden de aansluitingen per modulebak aangegeven.
+Dit zijn de aansluitschema's zoals besproken in het overleg van woensdag 30 april 2016 met de aanwezige leden van de H0-groep, waaronder de moduleco\"{o}rdinatoren (Marc en Peter).
+Er is besloten om af te stappen van de PTT-stekers en een versimpelde aansluiting te gebruiken met de Wieland ST16 stekkers die ook gebruikt worden voor de BNLS-modules, deze zijn geschikt voor 48V/25A, goedkoop (ca. 1 euro per stuk), en simpel aan te sluiten middels schroefaansluitingen.
+
+\subsection{Kabels}
+De kleuren van de kabels zijn niet kritisch, het is alleen voor het troubleshooten nuttig om de aangegeven kleuren aan te houden.
+
+\begin{figure}[!ht]
+  \captionbox
+  {Bovenaanzicht bekabeling basismodule\label{im:modulebak}}
+  {\includegraphics[scale=0.6]{images/rcu_modulebak}}
+\end{figure}
+
+\begin{figure}[!ht]
+  \captionbox
+  {Bovenaanzicht bekabeling seinenmodule\label{im:modulebak_seinen}}
+  {\includegraphics[scale=0.6]{images/rcu_modulebak_seinen}}
+\end{figure}
+
+\begin{figure}[!ht]
+  \captionbox
+  {Bovenaanzicht bekabeling seinenmodule met wissels\label{im:modulebak_seinen_wissels}}
+  {\includegraphics[scale=0.6]{images/rcu_modulebak_seinen_wissels}}
+\end{figure}
 
 \chapter{Beveiliging van de baan}
 VERVALLEN
@@ -534,7 +617,7 @@ Het spoor kan gelegen zijn op een spoordijk of loopt door een heuvel heen, dit n
   {\includegraphics[scale=1.0]{images/rcu_figuur13_14}}
 \end{figure}
 
-In de figuren 15 en 16 zijn de maten aangegeven die in het stationsgebied zorgdragen voor het probleemloos passeren van de treinen langs perrons,seinen, gebouwen en bruggen.
+In de figuren \ref{figuur15} en \ref{figuur16} zijn de maten aangegeven die in het stationsgebied zorgdragen voor het probleemloos passeren van de treinen langs perrons,seinen, gebouwen en bruggen.
 
 \begin{figure}[ht]
   \captionbox
@@ -562,7 +645,7 @@ Om alles wat onder de baan wordt opgeborgen bij een tentoonstelling aan het oog 
 
 Zie ook het boekje voor de regels tijdens beurzen, opendagen ect.
 
-\chapter{Digitale Centrale en Moduleboosters}
+\chapter{Modules, boosters en bezetmelders}
 
 \section{Inleiding}
 
@@ -577,49 +660,7 @@ Hierbij zijn voor de aansturing de volgende oplossingen gevonden:
 In dit hoofdstuk wordt uitgelegd hoe een en ander wordt aangesloten en bediend. Ook wordt alle informatie beschreven die nodig is om de RCU H0-modules aan elkaar te verbinden, zowel met detectie als zonder. Hierbij wordt uitgegaan van de nieuwe manier van aansluiten, middels Wieland stekkers voor de rijspanning en banaanstekkers voor de detectiestukken.
 
 \section{Modules}
-De Modules zijn gebaseerd op de voormalige 'M-Trak' modules, zoals deze in gebruik waren bij de \marklin groep. Zie voor de mechanische  en elektrische beschrijving hoofdstuk \ref{ch:modules}.
-
-\section{Aansluiten Modules}
-Op de volgende pagina's worden de aansluitingen per modulebak aangegeven.
-Dit zijn de aansluitschema's zoals besproken in het overleg van woensdag 30 april 2016 met de aanwezige leden van de H0-groep, waaronder de moduleco\"{o}rdinatoren (Marc en Peter).
-Er is besloten om af te stappen van de PTT-stekers en een versimpelde aansluiting te gebruiken met de Wieland ST16 stekkers die ook gebruikt worden voor de BNLS-modules, deze zijn geschikt voor 48V/25A, goedkoop (ca. 1 euro per stuk), en simpel aan te sluiten middels schroefaansluitingen.
-
-\subsection{Kabels}
-De kleuren van de kabels zijn niet kritisch, het is alleen voor het troubleshooten nuttig om de aangegeven kleuren aan te houden.
-
-\subsection{Modules zonder wissels}
-Er zijn 2 soorten basismodules zonder wissels: met en zonder seinen. De basismodule met seinen heeft 4 bezetmeldersecties.
-De secties worden aangesloten aan een 4 mm chassisdeel, waar een banaanstekker in past.
-Een basismodule zonder seinen heeft aan elke kant 2 van zulke aansluitingen, die links en rechts zijn doorverbonden, dus 2 secties.
-Een basismodule met seinen heeft ook aan elke kant 2 aansluitingen, maar deze zijn niet doorverbonden, dus er zijn 4 secties.
-
-\subsection{Modules met wissels}
-Een module met wissels is ook een soort basismodule: ook hier zijn 4 bezetmeldersecties, waarbij het doorgaande spoor een sectie is, en het afbuigende spoor een andere. Voor het aansluiten is deze hetzelfde als een basismodule met seinen.
-Een module met wissels heeft dus geen seinen, de seinen staan op de module voor de wissels, zodat een trein altijd stopt op deze module, en nooit op de module met wissels. De wissels kunnen dus kort na het begin van de module geplaatst worden.
-Treinen op het afbuigende spoor rijden door op de module n\'{a} de module met wissels, en stoppen dus nooit op deze module.
-De bediening van de wissels moet gebeuren door schakelaars op de module zelf, met behulp van een externe voeding. Deze mag niet uit de baanspanning worden gevoed. Deze schakelaars moeten 'puls'-schakelaars zijn, dus mogen niet in een vaste positie blijven staan.
-Verder moet de bediening aan te sluiten zijn op een wisseldecoder, zodat de wissels ook digitaal bestuurd kunnen worden. Beide mogelijkheden moeten parallel inzetbaar zijn, dus zelfs met digitale besturing moet handbediening nog mogelijk zijn.
-Er is alleen een tekening gemaakt van 1 variant, type '3a'. Desgewenst kunnen ook de andere varianten uitgetekend worden:
-
-\begin{tabular}{| l | p{14cm} |}
-\hline
-Basismodule 3a&Links 2 sporen, rechts 4 sporen\\
-\hline
-Basismodule 3b&Links 4 sporen, rechts 2 sporen\\
-\hline
-Basismodule 3c&Links 2 sporen, rechts 3 sporen (linkerspoor met wissel)\\
-\hline
-Basismodule 3d&Links 2 sporen, rechts 3 sporen (rechterspoor met wissel)\\
-\hline
-Basismodule 3e&Links 3 sporen, rechts 2 sporen (linkerspoor met wissel)\\
-\hline
-Basismodule 3f&Links 3 sporen, rechts 2 sporen (rechterspoor met wissel)\\
-\hline
-Basismodule 3g&Links 3 sporen, rechts 3 sporen (linkerspoor met wissel naar links, rechterspoor met wissel naar rechts)\\
-\hline
-Basismodule 3h&Links 3 sporen, rechts 3 sporen ( rechterspoor met wissel naar links, linkerspoor met wissel naar rechts)\\
-\hline
-\end{tabular}
+De Modules zijn gebaseerd op de voormalige 'M-track' modules, zoals deze in gebruik waren bij de \marklin groep. Zie voor de mechanische  en elektrische beschrijving hoofdstukken \ref{ch:modules} en \ref{ch:elektra}.
 
 \subsection{Omschakelen basismodules}
 Er zijn 2 soorten modules bij deze baan: 'basis' modules met alleen 2 sporen, zonder wissels of seinen, deze worden gewoon doorgelust, en 'seinenmodules', deze zijn voorzien van een of meerdere van de volgende zaken:
@@ -656,14 +697,29 @@ er zijn 2 soorten modules:
 
 Een blok bestaat uit 3 secties: een detectiesectie, een remsectie en een stopsectie. Aan het eind van elke stopsectie staat een sein. Hieruit volgt dan ook dat elk blok per richting minimaal bestaat uit 2 modules: een basismodule en een seinenmodule:
 
+\begin{figure}[!ht]
+  \captionbox
+  {Opstelling blok enkele richting\label{im:3secties}}
+  {\includegraphics[scale=1.0]{images/rcu_3_secties}}
+\end{figure}
+
 In rood de beschreven secties: de basismodule bevat dus alleen een detectiesectie, de seinenmodule bevat de rem- en stopsectie. De gestippelde lijnen zijn de secties voor de andere richting.
 Voor beide richtingen zijn dus minimaal 3 modules nodig: twee basismodules en een seinenmodule.
 Elke module is met elkaar verbonden met een wielandstekker voor de (digitale) spanning. De detectiestukken zijn altijd de binnenste railstaven, en deze zijn verbonden aan de groene chassisdelen voor de banaanstekkers:
-Bij een basismodule zijn deze chassisdelen per richting aan elkaar doorverbonden (een basismodule kent ten slotte maar 1 detectiestuk per rijrichting).
-Bij een seinenmodule zijn de 2 detectiestukken per richting apart verbonden.
+\begin{itemize}
+\item Bij een \emph{basismodule} zijn deze chassisdelen per richting aan elkaar doorverbonden (een basismodule kent ten slotte maar 1 detectiestuk per rijrichting).
+\item Bij een \emph{seinenmodule} zijn de 2 detectiestukken per richting apart verbonden.
+\end{itemize}
 
 \subsection{Aansluiting detectiestukken}
-De secties worden middels banaanstekkers verbonden aan het bezetmelder aansluitblok. 
+De secties worden middels banaanstekkers verbonden aan het bezetmelder aansluitblok (figuur \ref{im:rcu_bezetmelderblok}). 
+
+\begin{figure}[h]
+  \captionbox
+  {Bezetmelder aansluitblok\label{im:rcu_bezetmelderblok}}
+  {\includegraphics[scale=1.0]{images/rcu_bezetmelderblok}}
+\end{figure}
+
 
 Het bezetmelder aansluitblok is ook aangesloten aan de railspanningsaansluitingen van de vaste bekabeling van de module, op deze manier kan de stroom- en massadetectie worden gedetecteerd. Deze aansluitingen komen uit op 2 banaan chassisdelen op het aansluitblok, om eventueel de detectiesecties direct aan te sluiten (zie hoofdstuk 'Zonder bezetmeldersecties').
 De aansluitingen van het aansluitblok worden aan de volgende secties aangesloten:
@@ -679,7 +735,7 @@ De aansluitingen van het aansluitblok worden aan de volgende secties aangesloten
 
 Als er meerdere basismodules worden gebruikt als een sectie, moeten deze aan beide kanten aan elkaar worden doorverbonden middels doorverbindkabels (2 banaanstekkers groen), zie voorbeeld:
 
-Zonder bezetmeldersecties
+\subsection{Zonder bezetmeldersecties}
 Bij het rijden zonder detectie kunnen alle detectiesecties aan elkaar worden doorverbonden. De manier van omschakelen wordt dan anders:
 
 \begin{itemize}
@@ -718,27 +774,33 @@ Bij gebruik van meerdere boosters in de baan (1 booster per basismodule), moeten
 
 Als dit nog niet gebeurd is moet er maar 1 booster actief gemaakt worden, dus 1 booster aan 230V, en  de andere boosters niet aansluiten!
 
-\section{Universele Centrale (DCC/Motorola)}
-De centrale bestaat uit een elektronicamodule met touchscreen en interface (zie Bijlage \ref{ch:centrale}). De centrale is inmiddels in een kastje ingebouwd, en ziet er als volgt uit:
+\chapter{Universele Centrale (DCC/Motorola)}
+De centrale bestaat uit een elektronicamodule met touchscreen en interface (zie bijlage \ref{ch:centrale}). De centrale is inmiddels in een kastje ingebouwd, en ziet er als volgt uit (figuur \ref{centrale}):
 \\
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \captionbox
-  {Bovenaanzicht MDRRCII centrale\label{centrale}}
+  {Bovenaanzicht MDRRC-II centrale\label{centrale}}
   {\includegraphics[scale=0.1]{images/rcu_foto1}}\\
 \end{figure}
 
-Bij het opstarten of resetten van de centrale zie je linksonder in het scherm de huidige configuratie:
+Bij het opstarten of resetten van de centrale zie je linksonder in het scherm de huidige configuratie (zie figuur \ref{rcu-foto4}):
+
+\begin{figure}[h]
+  \captionbox
+  {Opstartscherm MDRRC-II centrale\label{rcu-foto4}}
+  {\includegraphics[scale=0.6]{images/rcu_foto4}}\\
+\end{figure}
 
 \begin{enumerate}
 \item PowerOff: geeft aan dat op dit moment de centrale geen signaal doorgeeft, door op de knop 'ON' te drukken op het touchscreen of op de kast (Stop/Go) kan de centrale worden ingeschakeld.
 \item Locs : 52 [nr]: Hoeveel locs er zijn gedefinieerd, zowel DCC als MM (Motorola), en hierna hoeveel daarvan als MM zijn gedefinieerd.
 \item S88  : 32 [nr] Freq : 10000 :Hoeveel S88 terugmeldmodules zijn geconfigureerd, en wat de uitleesfrequentie is
-\item Xnet : On  I2C : On : Of XpressNet (Xnet) aan staat, en of de andere interface aan staat (I2C, wordt niet gebruikt)
+\item Xnet : On  I2C : On : Of XpressNet (Xnet) aan staat, en of de andere interface aan staat (\isqc, wordt niet gebruikt)
 \end{enumerate}
 
 \section{Aansluiting Centrale aan booster(s)}
-Zoals hier aangegeven wordt de centrale middels de XpressNet kabels aan de boosters aangesloten, de boosters worden hier onderling ook mee aangesloten. De (Multi)muizen moeten dan aan de boosters worden aangesloten. Het maakt niet uit waar in de keten de centrale wordt aangesloten, zie figuur \ref{im:aansluiten_booster}.
+De centrale wordt middels de XpressNet kabels aan de boosters aangesloten, de boosters worden hier onderling ook mee aangesloten. De (Multi)muizen moeten dan aan de boosters worden aangesloten. Het maakt niet uit waar in de keten de centrale wordt aangesloten, zie figuur \ref{im:aansluiten_booster}.
 
 \begin{figure}[ht]
   \captionbox
@@ -746,11 +808,11 @@ Zoals hier aangegeven wordt de centrale middels de XpressNet kabels aan de boost
   {\includegraphics[scale=0.5]{images/rcu_schema1}\\}
 \end{figure}
 
-De achterkant van de centrale ziet er als volgt uit:\\
+De achterkant van de centrale ziet er als volgt uit (figuur \ref{centrale_achter}):\\
 
 \begin{figure}[h]
   \captionbox
-  {Achteraanzicht MDRRCII centrale\label{centrale_achter}}
+  {Achteraanzicht MDRRC-II centrale\label{centrale_achter}}
   {\includegraphics[scale=0.3]{images/rcu_foto5}\\}
 \end{figure}
 
@@ -767,8 +829,8 @@ X(press)net/Booster&Hier worden de boosters op aangesloten, via een 6-aderige pl
 \end{tabular}\\
 
 \section{Rijden met Locs}
-Default staat de centrale ingesteld op een bepaald protocol, dus \`{o}f DCC \`{o}f Motorola; dit betekent niet dat er geen andere locs aangestuurd kunnen worden, alleen welk formaat standaard is als er een nieuwe loc bijkomt.
-Er zijn meerdere manieren om locs bekend te maken in de centrale, een van de makkelijkste manieren is via de 'loc bibliotheek' in de Roco Multimaus:
+Default staat de centrale ingesteld op een bepaald protocol, dus \`{o}f DCC \`{o}f Motorola; dit betekent niet dat er geen andere locs aangestuurd kunnen worden, alleen welk formaat standaard is als er een nieuwe loc bijkomt. Om dit te wijzigen moet je een parameter van de centrale wijzigen, zie bijlage \ref{ch:config}.\\
+Er zijn meerdere manieren om locs bekend te maken in de centrale, een van de makkelijkste manieren is via de 'loc bibliotheek' van de Roco Multimaus:
 \begin{enumerate}
 \item Zorg dat de loc in de Multimaus is aangemaakt met naam en adres (andere parameters zijn niet belangrijk).
 \item Zet de MDRRC-II centrale op 'Receive Loc Library': 
@@ -780,8 +842,8 @@ Er zijn meerdere manieren om locs bekend te maken in de centrale, een van de mak
 \item Nu worden alle locs uit de Multimaus locbibliotheek ingelezen, op het touchscreen van de centrale worden alleen de nog niet bekende getoond.
 \end{enumerate}
 
-Al deze locs worden nu dus aangestuurd met het 'default' protocol, om dit te veranderen moet de centrale aan een computer worden gekoppeld.
-Met het Motorola protocol kun je ook Märklin 'Delta' decoders aansturen, de relatie tussen de 'Delta' adressen en de Motorola adressen is als volgt:\\
+Al deze locs worden nu dus aangestuurd met het 'default' protocol, je kunt het type wel wijzigen per lokadres.\\
+Met het Motorola protocol kun je ook \marklin 'Delta' decoders aansturen, de relatie tussen de 'Delta' adressen en de Motorola adressen is als volgt:\\
 
 \begin{tabular}{|l|l|}
 \hline
@@ -858,148 +920,6 @@ Per decoderadres kan dit omgewisseld worden:
 \end{enumerate}
 
 \appendix
-
-\chapter{Terugmelderaansluitingen}
-Aan de centrale kun je terugmelders aansluiten van het type S88. Dit gaat middels de zogenaamde S88N-norm, die gebruik maakt van Rj45 (UTP)-stekkers, zoals ze gebruikt worden voor computernetwerken. Deze kabels zijn makkelijk te krijgen in diverse lengtes, en goedkoop.
-Een eigenschap van S88 is dat het een 'keten' is van modules: de eerste module wordt verbonden met de tweede, de tweede met de derde, et cetera. De laatste module gaat naar de centrale. Een gevolg hiervan is dat de centrale moet weten hoe lang de keten is. Hierbij moet ook nog rekening worden gehouden met de grootte van een module. De centrale kent standaard 16-voudige modules, en moet dan ook worden ingesteld met het aantal van deze modules.
-Dit gaat als volgt: 
-\begin{enumerate}
-\item Verbind de centrale met een computer middels USB
-\item Open een terminalprogramma
-\item Zet de centrale in configuratiemodus: 
-\item Reset de MDRRC-II centrale
-\item Druk op 'SET'
-\item Druk op 'CON'
-\item Op de computer heb je nu contact met de configuratie van de centrale, je kunt alle commando's zien met het commando 'HELP'.
-\item Tik nu het commando 'STAT'; je krijgt nu de huidige instellingen te zien, het aantal S88 modules staat onder 'S88 Number of units'.
-\item Om het aantal aan te passen tik je 'S88NR' \textless spatie\textgreater en dan het aantal 16-voudige modules.
-\item Sla de instellingen op met 'STORE'.
-\item Verlaat de configuratiemodus met 'EXIT'.
-\item Je kunt de nu de USB-kabel loskoppelen.
-\end{enumerate}
-
-\chapter{Instellingen Rocrail}
-Om het programma Rocrail met de centrale te laten werken, ga je als volgt van start:
-\begin{enumerate}
-\item Open Rocview (de GUI van Rocrail)
-\item Ga naar Bestand $\Rightarrow$ Werkruimte Openen
-\item Kies in het venster een map om de configuratie in op te slaan (eventueel kun je hier ook een nieuwe map aanmaken)
-\item Klik op ''Open''. Onderaan het scherm moet nu staan 'Localhost:8051'
-\item Ga naar Bestand $\Rightarrow$ Rocrail eigenschappen
-\item Klik op 'Centrale'
-\item Verwijder de 'virtuele centrale' en maak een nieuwe aan: Selecteer 'P50x' en klik op 'Toevoegen'
-\item Klik op deze nieuwe centrale (NEW --- P50x) en op Eigenschappen.
-\item Geef in het volgende scherm de volgende waarden op:
-\subitem Interface ID: een naam voor de centrale, bijvoorbeeld MDRRC-II
-\subitem Poort: de poort waaraan de centrale is aangesloten (zie bijlage A)
-\subitem Baudrate: Deze moet op 115200 staan.
-\subitem Melders: het aantal S88 melders per 8 poorten, in het geval van 1 16-voudige module dus 2.
-\subitem De rest van de instellingen kun je zo laten, druk op 'OK'
-\item Je moet nu Rocview stoppen en weer starten, en daarna dezelfde map weer selecteren met 'Bestand $\Rightarrow$ Werkruimte Openen'.
-\end{enumerate}
-
-\chapter{USB poorten en MDRRC-II centrale}
-\label{ch:usbports}
-De centrale wordt middels USB aan een computer aangesloten. Onder de meeste besturingssystemen is de naam van de poort waar de centrale op is aangesloten afhankelijk van de volgorde van andere randapparaten. Onder Windows zal dit een 'compoort' zijn, dus com1, com2, etc.
-Onder Linux kun je de naam van de poort zien in de systeemlogs (commando 'dmesg' of programma 'Systeemlogboek onder Ubuntu):
-
-\monofont
-\begin{verbatim}
-[76960.156071] usb 3-10: new full-speed USB device number 19 using xhci_hcd 
-[76960.173441] usb 3-10: New USB device found, idVendor=0483, idProduct=5740 
-[76960.173450] usb 3-10: New USB device strings: Mfr=1, Product=2, SerialNumber=3 
-[76960.173455] usb 3-10: Product: STM32 Virtual COM Port  
-[76960.173459] usb 3-10: Manufacturer: STMicroelectronics 
-[76960.173462] usb 3-10: SerialNumber: 8D8247665756 
-[76960.173770] usb 3-10: ep 0x82 - rounding interval to 1024 microframes, ep desc says 2040 microframes 
-[76960.174276] cdc_acm 3-10:1.0: This device cannot do calls on its own. It is not a modem. 
-[76960.174324] cdc_acm 3-10:1.0: ttyACM0: USB ACM device 
-\end{verbatim}
-\myfont
-Je ziet hier dus een apparaat verschijnen met de volgende informatie:
-idVendor = 0483
-idProduct = 5740
-Het apparaat wordt aangesloten aan poort /dev/ttyACM0, deze kun je gebruiken in de instellingen van Rocrail.
-Als je een meer permanente verwijzing wilt, kun je een 'udev rule' aanmaken, dit gaat onder Ubuntu als volgt:
-Maak een bestand aan onder de directory /etc/udev/rules.d, noem deze bijvoorbeeld 70-mdrrc2.rules. Je hebt hier systeem (root) rechten voor nodig. Zet het volgende in dit bestand:
-
-\begin{verbatim}
-ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", ENV{ID_MM_DEVICE_IGNORE}="1" 
-SUBSYSTEM=="tty" ATTRS{product}=="STM32 Virtual COM Port  " SYMLINK+="mdrrc2" 
-\end{verbatim}
-
-Je ziet hier dezelfde id's terugkomen, de eerste regel selecteert op deze id's, de tweede regel zorgt ervoor dat er een 'symlink' wordt aangemaakt met de naam 'mdrrc2' onder de /dev/ structuur.
-Als deze regel actief is, zul je zien dat er altijd bij het aansluiten van de centrale een poort wordt aangemaakt met als naam /dev/mdrcc2, deze kun je gebruiken in Rocrail.
-
-\chapter{Opbouw detectie aansluitblok}
-\label{ch:detection}
-
-Op dit blok bevinden zich de volgende componenten:
-\begin{enumerate}
-\item 8-voudige stroomdetectieprint.
-\item dubbel RJ45 aansluitblok.
-\item 6-voudige kroonsteen met kabels (1 meter) met groene banaanstekkers.
-\item 2 x banaan chassisdeel voor rijspanning (rood) en massa (zwart).
-\end{enumerate}
-
-Op het dubbele RJ45-aansluitblok zijn aan de linker connector de detectiestukken aangesloten middels de kroonsteen met kabels en groene banaanstekkers, en aan de rechter connector de uitgangen van de stroomdetectieprint (alleen 1 t/m 6). Hierbij geldt de volgende normering:\\
-
-\begin{tabular}{|l|p{10cm}|}
-\hline
-1&Detectiesectie achterste spoor\\
-\hline
-2&Remsectie achterste spoor\\
-\hline
-3&Stopsectie achterste spoor\\
-\hline
-4&Detectiesectie voorste spoor\\
-\hline
-5&Remsectie voorste spoor\\
-\hline
-6&Stopsectie voorste spoor\\
-\hline
-7&Massa (met sperdiode)\\
-\hline
-8&Rijspanning\\
-\hline
-\end{tabular}
-
-\chapter{Beschrijving Interfaceprint MDRRC-II Centrale}
-\label{ch:centrale}
-
-De centrale wordt middels een interfaceprint (figuur \ref{im:interface}) aangesloten aan de buitenwereld, hierin zitten de volgende hulpschakelingen:
-
-\begin{itemize}
-\item Voeding voor +5 en +12 volt (ingang is 12 volt 2A gelijkspanning)
-\item USB-interface met 'type B' (printer) aansluiting
-\item Interface naar XpressNet + DCC, voor (Multi)muizen en booster
-\item Interface naar S88, voor terugmeldschakelingen
-\item Interface naar draaiknop, voor handbediening locs
-\end{itemize}
-
-\begin{figure}[ht]
-  \captionbox
-  {Schema MDRRCII interface\label{im:interface}}
-  {\includegraphics[scale=0.5]{images/rcu_schema2}\\}
-\end{figure}
-
-De interface is voorzien van een aparte 12 volt-voeding, en bevat dan dus de volgende aansluitingen:
-\begin{itemize}
-\item Booster/Hub/XpressNet: dit is een 6-polige kabel met RJ12 aansluitingen, deze loopt van de centrale naar de eerste modulebooster en wordt van daaruit doorgelust naar eventuele volgende moduleboosters.
-\item S88n/Terugmelderaansluitingen (op dit moment niet gebruikt): dit zijn 8-polige netwerkkabels (RJ45/UTP), die per groep van 6 railsecties de bezetmeldingen aan de centrale doorgeven.
-\item USB: middels een printerkabel (USB A-B kabel) wordt de centrale aan een PC aangesloten.
-\end{itemize}
-
-De centrale is voor de bediening van de baan verder niet nodig en kan op een plek buiten de baan worden neergezet (afhankelijk van de lengte van de kabels).
-De werking van de centrale is afhankelijk van de gebruikte softwareversie, op dit moment is dat 3.6.2.
-De vier knoppen onder het touchscreen hebben ook een functie, hoewel er op dit moment maar 2 worden gebruikt:
-
-\begin{enumerate}
-\item De knop helemaal links schakelt tussen 'On' en 'Off', kan dus gebruikt worden als een noodstop; deze knop is ook op de interfaceprint beschikbaar, en kan dus apart worden aangesloten.
-\item De knop helemaal rechtsonder reset de centrale.
-\end{enumerate}
-
-%%\chapter{Problemen oplossen met MDRRC-II centrale}
 
 \chapter{Testen Modules}
 Voor het testen van de modules is een testkastje gemaakt, die controleert of de aansluitingen van de module nog correct zijn.
@@ -1091,6 +1011,12 @@ Geen enkele led gaat aan&batterij op of kabels defect\\
 
 \section{kortsluittest op module zonder rijdend materieel - enkel}
 
+\begin{figure}[!ht]
+  \captionbox
+  {Kortsluittest enkel\label{im:test_enkel}}
+  {\includegraphics[scale=0.8]{images/rcu_test_enkel}\\}
+\end{figure}
+
 \begin{itemize}
 \item koppel de module helemaal los (Wieland stekkers en banaanstekkers los aan beide kanten) 
 \item Zorg dat er geen rollend materiaal op de module staat
@@ -1123,6 +1049,12 @@ meerdere leds gaan aan bij indrukken 1 drukknop&kortsluiting tussen de sporen\\
 \end{itemize}
 
 \section{kortsluittest op module zonder rijdend materieel - dubbel}
+
+\begin{figure}[!ht]
+  \captionbox
+  {Kortsluittest dubbel\label{im:test_dubbel}}
+  {\includegraphics[scale=0.8]{images/rcu_test_dubbel}\\}
+\end{figure}
 
 \begin{itemize}
 \item koppel de module helemaal los (Wieland stekkers en banaanstekkers los aan beide kanten)
@@ -1159,6 +1091,12 @@ meerdere leds gaan aan bij indrukken 1 drukknop&kortsluiting tussen de sporen\\
 \end{itemize}
 
 \section{verbindingstest op module met rijdend materieel (3-rail)}
+
+\begin{figure}[!ht]
+  \captionbox
+  {Kortsluittest dubbel met materieel\label{im:test_dubbel_met}}
+  {\includegraphics[scale=0.8]{images/rcu_test_dubbel_met}\\}
+\end{figure}
 
 \begin{itemize}
 \item koppel de module helemaal los (Wieland stekkers en banaanstekkers los aan beide kanten) 
@@ -1199,6 +1137,12 @@ Bij indrukken drukknop 2 of 3 brandt led 1 helemaal niet&materiaal maakt geen co
 
 \section{verbindingstest op module met rijdend materieel (2-rail)}
 
+\begin{figure}[!ht]
+  \captionbox
+  {Kortsluittest dubbel met materieel 2-rail\label{im:test_dubbel_met_2rail}}
+  {\includegraphics[scale=0.8]{images/rcu_test_dubbel_met_2rail}\\}
+\end{figure}
+
 \begin{itemize}
 \item koppel de module helemaal los (Wieland stekkers en banaanstekkers los aan beide kanten) 
 \item Zet rollend materiaal op de baan: een loc of een wagen met verlichting waarvan zeker is dat deze goed is.
@@ -1236,7 +1180,157 @@ Bij indrukken drukknop 2 of 3 brandt led 1&materiaal maakt contact met de baan v
 
 \end{itemize}
 
+\chapter{Opbouw detectie aansluitblok}
+\label{ch:detection}
+
+Op dit blok bevinden zich de volgende componenten:
+\begin{enumerate}
+\item 8-voudige stroomdetectieprint.
+\item dubbel RJ45 aansluitblok.
+\item 6-voudige kroonsteen met kabels (1 meter) met groene banaanstekkers.
+\item 2 x banaan chassisdeel voor rijspanning (rood) en massa (zwart).
+\end{enumerate}
+
+Op het dubbele RJ45-aansluitblok zijn aan de linker connector de detectiestukken aangesloten middels de kroonsteen met kabels en groene banaanstekkers, en aan de rechter connector de uitgangen van de stroomdetectieprint (alleen 1 t/m 6). Hierbij geldt de volgende normering:\\
+
+\begin{tabular}{|l|p{10cm}|}
+\hline
+1&Detectiesectie achterste spoor\\
+\hline
+2&Remsectie achterste spoor\\
+\hline
+3&Stopsectie achterste spoor\\
+\hline
+4&Detectiesectie voorste spoor\\
+\hline
+5&Remsectie voorste spoor\\
+\hline
+6&Stopsectie voorste spoor\\
+\hline
+7&Massa (met sperdiode)\\
+\hline
+8&Rijspanning\\
+\hline
+\end{tabular}
+
+\chapter{Beschrijving Interfaceprint MDRRC-II Centrale}
+\label{ch:centrale}
+
+De centrale wordt middels een interfaceprint (figuur \ref{im:interface}) aangesloten aan de buitenwereld, hierin zitten de volgende hulpschakelingen:
+
+\begin{itemize}
+\item Voeding voor +5 en +12 volt (ingang is 12 volt 2A gelijkspanning)
+\item USB-interface met 'type B' (printer) aansluiting
+\item Interface naar XpressNet + DCC, voor (Multi)muizen en booster
+\item Interface naar S88, voor terugmeldschakelingen
+\item Interface naar draaiknop, voor handbediening locs
+\end{itemize}
+
+\begin{figure}[ht]
+  \captionbox
+  {Schema MDRRC-II interface\label{im:interface}}
+  {\includegraphics[scale=0.5]{images/rcu_schema2}\\}
+\end{figure}
+
+De interface is voorzien van een aparte 12 volt-voeding, en bevat dan dus de volgende aansluitingen:
+\begin{itemize}
+\item Booster/Hub/XpressNet: dit is een 6-polige kabel met RJ12 aansluitingen, deze loopt van de centrale naar de eerste modulebooster en wordt van daaruit doorgelust naar eventuele volgende moduleboosters.
+\item S88n/Terugmelderaansluitingen (op dit moment niet gebruikt): dit zijn 8-polige netwerkkabels (RJ45/UTP), die per groep van 6 railsecties de bezetmeldingen aan de centrale doorgeven.
+\item USB: middels een printerkabel (USB A-B kabel) wordt de centrale aan een PC aangesloten.
+\end{itemize}
+
+De centrale is voor de bediening van de baan verder niet nodig en kan op een plek buiten de baan worden neergezet (afhankelijk van de lengte van de kabels).
+De werking van de centrale is afhankelijk van de gebruikte softwareversie, op dit moment is dat 3.6.2.
+De vier knoppen onder het touchscreen hebben ook een functie, hoewel er op dit moment maar 2 worden gebruikt:
+
+\begin{enumerate}
+\item De knop helemaal links schakelt tussen 'On' en 'Off', kan dus gebruikt worden als een noodstop; deze knop is ook op de interfaceprint beschikbaar, en kan dus apart worden aangesloten.
+\item De knop helemaal rechtsonder reset de centrale.
+\end{enumerate}
+
+\chapter{Terugmelderaansluitingen}
+Aan de centrale kun je terugmelders aansluiten van het type S88. Dit gaat middels de zogenaamde S88N-norm, die gebruik maakt van Rj45 (UTP)-stekkers, zoals ze gebruikt worden voor computernetwerken. Deze kabels zijn makkelijk te krijgen in diverse lengtes, en goedkoop.
+Een eigenschap van S88 is dat het een 'keten' is van modules: de eerste module wordt verbonden met de tweede, de tweede met de derde, et cetera. De laatste module gaat naar de centrale. Een gevolg hiervan is dat de centrale moet weten hoe lang de keten is. Hierbij moet ook nog rekening worden gehouden met de grootte van een module. De centrale kent standaard 16-voudige modules, en moet dan ook worden ingesteld met het aantal van deze modules.
+Dit gaat als volgt: 
+\begin{enumerate}
+\item Verbind de centrale met een computer middels USB
+\item Open een terminalprogramma
+\item Zet de centrale in configuratiemodus: 
+\item Reset de MDRRC-II centrale
+\item Druk op 'SET'
+\item Druk op 'CON'
+\item Op de computer heb je nu contact met de configuratie van de centrale, je kunt alle commando's zien met het commando 'HELP'.
+\item Tik nu het commando 'STAT'; je krijgt nu de huidige instellingen te zien, het aantal S88 modules staat onder 'S88 Number of units'.
+\item Om het aantal aan te passen tik je 'S88NR' \textless spatie\textgreater en dan het aantal 16-voudige modules.
+\item Sla de instellingen op met 'STORE'.
+\item Verlaat de configuratiemodus met 'EXIT'.
+\item Je kunt de nu de USB-kabel loskoppelen.
+\end{enumerate}
+
+\chapter{Instellingen Rocrail}
+Om het programma Rocrail met de centrale te laten werken, ga je als volgt van start:
+
+\begin{figure}[!ht]
+  \captionbox
+  {Instellingen Rocrail\label{im:rocrail}}
+  {\includegraphics[scale=0.4]{images/rcu_rocrail}\\}
+\end{figure}
+
+\begin{enumerate}
+\item Open Rocview (de GUI van Rocrail)
+\item Ga naar Bestand $\Rightarrow$ Werkruimte Openen
+\item Kies in het venster een map om de configuratie in op te slaan (eventueel kun je hier ook een nieuwe map aanmaken)
+\item Klik op ''Open''. Onderaan het scherm moet nu staan 'Localhost:8051'
+\item Ga naar Bestand $\Rightarrow$ Rocrail eigenschappen
+\item Klik op 'Centrale'
+\item Verwijder de 'virtuele centrale' en maak een nieuwe aan: Selecteer 'P50x' en klik op 'Toevoegen'
+\item Klik op deze nieuwe centrale (NEW --- P50x) en op Eigenschappen.
+\item Geef in het volgende scherm de volgende waarden op:
+\subitem Interface ID: een naam voor de centrale, bijvoorbeeld MDRRC-II
+\subitem Poort: de poort waaraan de centrale is aangesloten (zie bijlage \ref{ch:usbports})
+\subitem Baudrate: Deze moet op 115200 staan.
+\subitem Melders: het aantal S88 melders per 8 poorten, in het geval van 1 16-voudige module dus 2.
+\subitem De rest van de instellingen kun je zo laten, druk op 'OK'
+\item Je moet nu Rocview stoppen en weer starten, en daarna dezelfde map weer selecteren met 'Bestand $\Rightarrow$ Werkruimte Openen'.
+\end{enumerate}
+
+\chapter{USB poorten en MDRRC-II centrale}
+\label{ch:usbports}
+De centrale wordt middels USB aan een computer aangesloten. Onder de meeste besturingssystemen is de naam van de poort waar de centrale op is aangesloten afhankelijk van de volgorde van andere randapparaten. Onder Windows zal dit een 'compoort' zijn, dus com1, com2, etc.
+Onder Linux kun je de naam van de poort zien in de systeemlogs (commando 'dmesg' of programma 'Systeemlogboek onder Ubuntu):
+
+\monofont
+\begin{verbatim}
+[76960.156071] usb 3-10: new full-speed USB device number 19 using xhci_hcd 
+[76960.173441] usb 3-10: New USB device found, idVendor=0483, idProduct=5740 
+[76960.173450] usb 3-10: New USB device strings: Mfr=1, Product=2, SerialNumber=3 
+[76960.173455] usb 3-10: Product: STM32 Virtual COM Port  
+[76960.173459] usb 3-10: Manufacturer: STMicroelectronics 
+[76960.173462] usb 3-10: SerialNumber: 8D8247665756 
+[76960.173770] usb 3-10: ep 0x82 - rounding interval to 1024 microframes, ep desc says 2040 microframes 
+[76960.174276] cdc_acm 3-10:1.0: This device cannot do calls on its own. It is not a modem. 
+[76960.174324] cdc_acm 3-10:1.0: ttyACM0: USB ACM device 
+\end{verbatim}
+\myfont
+Je ziet hier dus een apparaat verschijnen met de volgende informatie:
+idVendor = 0483
+idProduct = 5740
+Het apparaat wordt aangesloten aan poort /dev/ttyACM0, deze kun je gebruiken in de instellingen van Rocrail.
+Als je een meer permanente verwijzing wilt, kun je een 'udev rule' aanmaken, dit gaat onder Ubuntu als volgt:
+Maak een bestand aan onder de directory /etc/udev/rules.d, noem deze bijvoorbeeld 70-mdrrc2.rules. Je hebt hier systeem (root) rechten voor nodig. Zet het volgende in dit bestand:
+
+\begin{verbatim}
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", ENV{ID_MM_DEVICE_IGNORE}="1" 
+SUBSYSTEM=="tty" ATTRS{product}=="STM32 Virtual COM Port  " SYMLINK+="mdrrc2" 
+\end{verbatim}
+
+Je ziet hier dezelfde id's terugkomen, de eerste regel selecteert op deze id's, de tweede regel zorgt ervoor dat er een 'symlink' wordt aangemaakt met de naam 'mdrrc2' onder de /dev/ structuur.
+Als deze regel actief is, zul je zien dat er altijd bij het aansluiten van de centrale een poort wordt aangemaakt met als naam /dev/mdrcc2, deze kun je gebruiken in Rocrail.
+
+%%\chapter{Problemen oplossen met MDRRC-II centrale}
+
 \chapter{Gebruik MDRRC-config programma}
+\label{ch:config}
 Voor het aanpassen van de centrale is een programma ontwikkeld, bedoeld om het configureren en gebruik van de centrale te vereenvoudigen.
 Het programma werkt onder Linux en Windows, en bestaat uit een menuscherm en 3 afzonderlijke programma's:
 \begin{itemize}
@@ -1264,7 +1358,7 @@ Klik op het meest rechtse icoon (figuur \ref{scs:settings}):
   {\includegraphics[scale=0.5]{images/rcu_screenshot2}\\}
 \end{figure}
 
-De poortnaam is de naam die door het systeem aan de centrale wordt gegeven. Onder windows is dat bijvoorbeeld 'COM3', onder Linux is dat een 'devicenaam', zoals '/dev/mdrrc2' (zie ook bijlage C). Vul de juiste naam in en klik op 'bewaar'. De snelheid en overige instellingen blijven ingesteld zoals aangegeven.
+De poortnaam is de naam die door het systeem aan de centrale wordt gegeven. Onder windows is dat bijvoorbeeld 'COM3', onder Linux is dat een 'devicenaam', zoals '/dev/mdrrc2' (zie ook bijlage \ref{ch:usbports}). Vul de juiste naam in en klik op 'bewaar'. De snelheid en overige instellingen blijven ingesteld zoals aangegeven.
 De Export instellingen zijn de 'default' filenamen die voor de export van de config en de loklijst worden gebruikt. Je kunt deze altijd overschrijven met je eigen bestandsnamen.
 Als de juiste instellingen zijn ingevuld, zet dan de centrale op 'Config mode', door deze te resetten en achtereenvolgens op 'SET' en 'CON' te drukken op het touchscreen.
 Je kunt nu een van de programma's starten.
@@ -1272,7 +1366,7 @@ Je kunt nu een van de programma's starten.
 \section{Configuratie Editor}
 Klik op het meest linkse icoon van het menu, het volgende scherm verschijnt nu (figuur \ref{scs:configeditor}):\\
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \captionbox
   {Config Editor\label{scs:configeditor}}
   {\includegraphics[scale=0.5]{images/rcu_screenshot3}}\\
@@ -1304,7 +1398,7 @@ Je kunt ook de configuratie exporteren naar een .csv bestand (3e knop) of een be
 \section{Loklijst editor}
 Klik op het middelste icoon van het menu, het volgende scherm verschijnt nu (figuur \ref{scs:loclisteditor}):\\
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \captionbox
   {Loclijst Editor\label{scs:loclisteditor}}
   {\includegraphics[scale=1.0]{images/rcu_screenshot4}}\\
