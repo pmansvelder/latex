@@ -1,0 +1,12 @@
+1 & rdbms-platform-resource-1-1.1-1 & rpm
+1 & ems-platform-resource-1-1.0-3 & rpm
+1 & linux-platform-resource-1-1.0-3.noarch & rpm
+1 & jee-platform-resource-1-1.7-1.noarch & rpm
+1 & uis_platform_aw1uis-1.13-0 & rpm
+1 & uis_database-1.0.2 & rpm
+1 & uis_platform_aw1uis-1.13-0 & rpm
+1 & uis_ems-1.9-0 & rpm
+1 & uis_platform_aw1uis-1.13-0 & rpm
+1 & uis_linux_1.3-1 & rpm
+1 & uis_files-1.2-1 & rpm
+1 & uis_weblogic-1.1-1 & rpm

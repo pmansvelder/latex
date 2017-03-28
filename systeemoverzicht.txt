@@ -1,0 +1,8 @@
+Schema + korte uitleg.
+
+Het doel van dit document is...
+
+De doelgroep bestaat uit de programmeurs van de SBOB's, de applicatiebeheerders, 
+de technisch applicatiebeheerders, en alle anderen binnen ICT-O 
+die zich bezighouden met het schrijven van documentatie.
+

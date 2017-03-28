@@ -1,0 +1,5 @@
+Controleer of de RPMs beschikbaar zijn op de satellite:
+\begin{itemize}
+\item \monofont sudo yum info rpm-naam
+\end{itemize}
+Verwacht resultaat: de juiste versie moet beschikbaar zijn op de satellite.

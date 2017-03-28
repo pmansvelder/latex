@@ -11,10 +11,11 @@
 \contentsline {section}{\numberline {3.4}Overgangsmodules}{10}{section.3.4}
 \contentsline {section}{\numberline {3.5}De hoekmodule}{11}{section.3.5}
 \contentsline {section}{\numberline {3.6}De stationsmodules}{11}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Opbouw poten}{11}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.7}Opbouw poten}{11}{section.3.7}
 \contentsline {chapter}{\numberline {4}Het leggen van de rails}{14}{chapter.4}
 \contentsline {section}{\numberline {4.1}Gebruikte rail}{14}{section.4.1}
 \contentsline {section}{\numberline {4.2}Montage}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}Proef met Peco rail}{15}{section.4.3}
 \contentsline {chapter}{\numberline {5}Normen elektrische installatie}{17}{chapter.5}
 \contentsline {section}{\numberline {5.1}De 230 volt voeding van de baan}{17}{section.5.1}
 \contentsline {section}{\numberline {5.2}Het laagspanningsgedeelte van de baan}{17}{section.5.2}

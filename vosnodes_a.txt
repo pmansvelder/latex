@@ -1,0 +1,19 @@
+Oracle RAC Node 1 & Database Server 1 & pads24.ad.post21.nl
+Oracle RAC Node 2 & Database Server 2 & pads2c.ad.post21.nl
+LVS NODE 1 & Loadbalancer Node 1 & pads28.ad.post21.nl
+LVS NODE 2 & Loadbalancer Node 2 & pads2f.ad.post21.nl
+EMS NODE 1 & Tibco ESB Node 1 & pads22.ad.post21.nl
+EMS NODE 2 & Tibco ESB Node 2 & pads2a.ad.post21.nl
+EMS NODE 3 & Tibco ESB Node 3 & pads2b.ad.post21.nl
+BW SERVER 1 & Tibco BW Node 1 & pads23.ad.post21.nl
+BW SERVER 2 & Tibco BW Node 2 & pads2g.ad.post21.nl
+APPNODE6 & Weblogic Server 1 (LLP2/JEE5) & pads30.ad.post21.nl
+APPNODE7 & Weblogic Server 2 (LLP2/JEE5) & pads31.ad.post21.nl
+APPNODE8 & Weblogic Server 3 (LLP2/JEE5) & pads3a.ad.post21.nl
+APPNODE9 & Weblogic Server 4 (LLP2/JEE5) & pads3b.ad.post21.nl
+APPNODE10 & Weblogic Server 5 (LLP2/JEE5) & pads3c.ad.post21.nl
+APPNODE11 & Weblogic Server 1 (LLP3/JEE6) & adccuf.dc.post21.nl
+APPNODE12 & Weblogic Server 2 (LLP3/JEE6) & adccug.dc.post21.nl
+APPNODE13 & Weblogic Server 3 (LLP3/JEE6) & adccuh.dc.post21.nl
+APPNODE14 & Weblogic Server 4 (LLP3/JEE6) & adccuj.dc.post21.nl
+APPNODE15 & Weblogic Server 5 (LLP3/JEE6) & adccuk.dc.post21.nl
