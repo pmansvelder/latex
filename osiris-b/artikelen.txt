@@ -1,0 +1,7 @@
+1 & osiris\\\\\\\\\\\\\\\\_ear-4.1-1.noarch.rpm & rpm
+1 & osiris\\\\\\\\\\\\\\\\_files-4.1-1.noarch.rpm & rpm
+1 & osiris\\\\\\\\\\\\\\\\_weblogic-4.1-1.noarch.rpm & rpm
+1 & osiris\\\\\\\\\\\\\\\\_database-4.1-1.noarch.rpm & rpm
+1 & osiris\\\\\\\\\\\\\\\\_linux-4.1-1.noarch.rpm & rpm
+1 & osiris\\\\\\\\\\\\\\\\_ems-4.1-1.noarch.rpm & rpm
+1 & osiris\\\\\\\\\\\\\\\\_platform\\\\\\\\\\\\\\\\_bw1osi-4.1-1.noarch.rpm & rpm

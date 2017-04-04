@@ -1,9 +1,9 @@
 DienstChange IDS
-Dienst VOS
+Dienst OSIRIS
 DienstEigenaar Peter Mansvelder
-DienstVersie 15.1  
+DienstVersie 4.2.3
 DienstOmgeving Productie  
-DraaiboekVersie 0.2 
+DraaiboekVersie 0.1
 DraaiboekStatus Concept  
 DraaiboekOmschrijving Tweede Concept LaTeX opzet  
 DraaiboekAuteur Peter Mansvelder  
@@ -17,3 +17,9 @@ EindTijd 17:00
 AppNodeA pdccma.dc.post21.nl
 AppNodeB pdccmb.dc.post21.nl
 AppNodeC pdccmc.dc.post21.nl
+AppNodeD pdccjb.dc.post21.nl
+DBNodeA pads24.ad.post21.nl
+DBNodeB pads2c.ad.post21.nl
+EMSNodeA adccua.dc.post21.nl
+EMSNodeB adccub.dc.post21.nl
+InstallUser install_beheer1

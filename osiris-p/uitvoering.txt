@@ -1,0 +1,34 @@
+ & \textbf{Installatie VMB op Database server}
+1 & Noteer het starttijdstip van de werkzaamheden: begonnen om ......... uur.
+2 & Log in op \DBNodeA \ als \emph{\InstallUser} en installeer de benodigde VMB RPM's:
+ & \monofont \small \$ sudo yum install --nogpgcheck vmb_platform_aw1vmb-3.4-3.noarch -y 
+ & \monofont \small \$ sudo yum install --nogpgcheck vmb_database-3.4-3.noarch -y \myfont
+ & Toelichting: Het script zal een nieuwe database aanmaken als deze nog niet bestaat en de database bijwerken als deze al wel bestaat.
+ & \textbf{Installatie VMB op EMS server}
+3 & Log in op de \EMSNodeA \ als \emph{\InstallUser} en installeer de benodigde VMB RPM's:
+ & \monofont \small \$ sudo yum install --nogpgcheck vmb_platform_aw1vmb-3.4-3.noarch -y
+ & \monofont \small \$ sudo yum install --nogpgcheck vmb_ems-3.4-3.noarch -y
+ & Als de \InstallUser \ user nog niet is opgenomen in de sudoers file, dan kan deze installatie uitgevoerd worden met de 'root' user.  Toelichting: Het script maakt queues aan in EMS, maar zal deze niet verwijderen bij een de-installatie. Het verwijderen moet gebeuren via een change request. 
+ & \textbf{Configuratie Firewall voor VMB op Managed Servers}
+4& Log in op de nodes \AppNodeA , \AppNodeB \ en \AppNodeC \ als \emph{\InstallUser} en voer de volgende commando's uit:
+ & \monofont \small \$ sudo yum install vmb_platform_aw1vmb-3.4-3.noarch -y
+ & \monofont \small \$ sudo -E yum install vmb_linux-3.4-3.noarch -y
+ & \textbf{Installatie Weblogic Domein vanaf Admin Server}
+5& Log in op node \emph{\AppNodeA} als \emph{\InstallUser} en voer de volgende commando's uit:
+ & \monofont \small \$ sudo yum install vmb_weblogic-3.4-3.noarch –y
+ & \textbf{Installatie configuratiebestanden en libraries op Managed Servers}
+6 & Log in op nodes \AppNodeA , \AppNodeB \ en \AppNodeC \ als \emph{\InstallUser} en voer de volgende commando's uit:
+ & \monofont \small \$ sudo yum install vmb_files_aw1vmb-3.4-3.noarch –y
+ & \textbf{Installatie VMB applicatie op Admin Server}
+7 & Log in op node \emph{\AppNodeA} als \emph{\InstallUser} en voer de volgende commando's uit:
+ & \monofont \small \$ sudo yum install vmb_ear_aw1vmb-3.4-3.noarch –y
+ & Het kan zijn dat er een melding komt dat de deployment uitgesteld is tot het moment dat de managed servers weer gestart zijn. Dit is verwacht gedrag.
+ & \textbf{Herstarten managed servers}
+8& Open de WebLogic console in een webbrowser en log in. 
+ & Ga naar Environment \textrightarrow{} Servers \textrightarrow{} Control. 
+ & Vink aw1vmb-managedServer-1, 2 en 3 aan.
+ & Kies Shutdown \textrightarrow{} When work completes.
+ & Wacht tot de servers gestopt zijn.
+ & Vink aw1vmb-managedServer-1, 2 en 3 aan.
+ & Kies Start. 
+ & Wacht totdat deze servers gestart zijn.

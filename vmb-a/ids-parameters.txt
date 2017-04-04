@@ -21,4 +21,4 @@ DBNodeA pads24.ad.post21.nl
 DBNodeB pads2c.ad.post21.nl
 EMSNodeA adccua.dc.post21.nl
 EMSNodeB adccub.dc.post21.nl
-InstallUser install\_beheer1
+InstallUser install_beheer1

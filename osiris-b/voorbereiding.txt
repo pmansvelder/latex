@@ -4,7 +4,7 @@ Voordat met de installatie begonnen wordt, moet eerst gecontroleerd worden of VM
 \\ \monofont http://172.30.224.25:7501/console 
 \item \myfont Als de console aanwezig en bereikbaar is, controleer dan bij Deployments of VMB geinstalleerd is.
 \item Log met een terminal afzonderlijk in op de Weblogic Admin server en de drie Managed Servers. Gebruik hierbij de \InstallUser \ user. Bekijk de geinstalleerde VMB rpm files:
-\\ \monofont rpm -qa \textbar  grep vmb\_ \myfont
+\\ \monofont rpm -qa \textbar  grep vmb_ \myfont
 \end{itemize}
 Indien dit commando geen resultaten geeft, zijn er geen VMB RPM''s geinstalleerd en kan worden verder gegaan met de installatie van VMB.
 

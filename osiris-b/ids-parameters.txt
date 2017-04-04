@@ -18,4 +18,8 @@ AppNodeA pdccuj.dc.post21.nl
 AppNodeB pdccuk.dc.post21.nl
 AppNodeC pdccja.dc.post21.nl
 AppNodeD pdccjb.dc.post21.nl
-
+DBNodeA pads24.ad.post21.nl
+DBNodeB pads2c.ad.post21.nl
+EMSNodeA adccua.dc.post21.nl
+EMSNodeB adccub.dc.post21.nl
+InstallUser install_beheer1
