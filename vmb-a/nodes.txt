@@ -1,0 +1,8 @@
+Oracle RAC Node 1 & Database Server 1 & pads24.ad.post21.nl
+Oracle RAC Node 2 & Database Server 2 & pads2c.ad.post21.nl
+VIP Adres & & 172.30.224.25
+EMS NODE 1 & Tibco ESB Node 1 & adccua.dc.post21.nl
+EMS NODE 2 & Tibco ESB Node 2 & adccub.dc.post21.nl
+APPNODE12 & Weblogic Server 2 (LLP3/JEE6) & adccug.dc.post21.nl
+APPNODE13 & Weblogic Server 3 (LLP3/JEE6) & adccuh.dc.post21.nl
+APPNODE14 & Weblogic Server 4 (LLP3/JEE6) & adccuj.dc.post21.nl

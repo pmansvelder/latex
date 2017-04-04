@@ -1,0 +1,19 @@
+Oracle RAC Node 1 & Database Server 1 & pdccma.dc.post21.nl
+Oracle RAC Node 2 & Database Server 2 & pdccmb.dc.post21.nl
+LVS NODE 1 & Loadbalancer Node 1 & pdcs0b.dc.post21.nl
+LVS NODE 2 & Loadbalancer Node 2 & pdcs0c.dc.post21.nl
+EMS NODE 1 & Tibco ESB Node 1 & pdccpa.dc.post21.nl
+EMS NODE 2 & Tibco ESB Node 2 & pdccpb.dc.post21.nl
+EMS NODE 3 & Tibco ESB Node 3 & pdccpc.dc.post21.nl
+BW SERVER 1 & Tibco BW Node 1 & pdcs09.dc.post21.nl
+BW SERVER 2 & Tibco BW Node 2 & pdcs0a.dc.post21.nl
+APPNODE6 & Weblogic Server 1 (LLP2/JEE5) & pdccmf.dc.post21.nl
+APPNODE7 & Weblogic Server 2 (LLP2/JEE5) & pdccmg.dc.post21.nl
+APPNODE8 & Weblogic Server 3 (LLP2/JEE5) & pdccmh.dc.post21.nl
+APPNODE9 & Weblogic Server 4 (LLP2/JEE5) & pdccmj.dc.post21.nl
+APPNODE10 & Weblogic Server 5 (LLP2/JEE5) & pdccmk.dc.post21.nl
+APPNODE11 & Weblogic Server 1 (LLP3/JEE6) & pdccvf.dc.post21.nl
+APPNODE12 & Weblogic Server 2 (LLP3/JEE6) & pdccvg.dc.post21.nl
+APPNODE13 & Weblogic Server 3 (LLP3/JEE6) & pdccvh.dc.post21.nl
+APPNODE14 & Weblogic Server 4 (LLP3/JEE6) & pdccvj.dc.post21.nl
+APPNODE15 & Weblogic Server 5 (LLP3/JEE6) & pdccvk.dc.post21.nl
