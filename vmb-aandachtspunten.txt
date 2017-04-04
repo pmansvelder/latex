@@ -1,0 +1,17 @@
+\subsection{Uitleg logging tijdens installatie}
+
+De installatie toont informatie op het scherm, maar schrijft geen informatie weg in een bestand. Om de installatie-output weg te schrijven in een logbestand kan het commando ''script'' gebruikt worden om alle output van een sessie te loggen. Het ''script'' commando schrijft dan alles wat op het scherm getoond wordt naar het meegegeven bestand. Voorbeeld: 
+\\
+
+\monofont{\$ script -fqa ~/VMB-install-history-<<node>>-<<datum>>.log}
+\\
+
+\myfont Dus bij elke keer dat er ingelogd wordt op een machine moet dit commando als eerste worden uitgevoerd. 
+
+\subsection{Opschonen yum repository op alle Servers}
+
+Log in op de Weblogic Managed Server en op de Weblogic Admin Server als \InstallUser \  en voer het volgende commando uit:
+\\
+
+\monofont \$ sudo yum clean all 
+\myfont

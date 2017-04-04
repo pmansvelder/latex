@@ -17,6 +17,17 @@ vos-a: vos-15.3-acc.txt
 	./convert_txt.sh vos-15.3-acc.txt ids-parameters.tex
 	cp vosnodes_a.txt nodes.txt
 	cp vos_artikelen.txt artikelen_raw.txt
+vmb-a: vmb-3.4-acc.txt
+	./convert_txt.sh vmb-3.4-acc.txt ids-parameters.tex
+	cp vosnodes_a.txt nodes.txt
+	cp vmb_artikelen.txt artikelen_raw.txt
+	cp vmb-a-versiebeheer.txt versiebeheer.txt
+	cp vmb-systeemoverzicht.txt systeemoverzicht.txt
+	cp vmb-randvoorwaarden.txt randvoorwaarden.txt
+	cp vmb-voorbereiding.txt voorbereiding.txt
+	cp vmb-werkzaamheden.txt werkzaamheden.txt
+	cp vmb-aandachtspunten.txt aandachtspunten.txt
+	cp vmb-uitvoering.txt uitvoering.txt
 b2b-b: b2b-bepr.txt
 	./convert_txt.sh b2b-bepr.txt ids-parameters.tex
 	cp vosnodes_b.txt nodes.txt

@@ -1,0 +1,15 @@
+Voordat met de installatie begonnen wordt, moet eerst gecontroleerd worden of VMB al geinstalleerd is op de betreffende WebLogic omgeving.
+\begin{itemize}
+\item Log in met een webbrowser op de WebLogic console
+\\ \monofont http://172.30.224.25:7501/console 
+\item \myfont Als de console aanwezig en bereikbaar is, controleer dan bij Deployments of VMB geinstalleerd is.
+\item Log met een terminal afzonderlijk in op de Weblogic Admin server en de drie Managed Servers. Gebruik hierbij de \InstallUser \ user. Bekijk de geinstalleerde VMB rpm files:
+\\ \monofont rpm -qa \textbar  grep vmb\_ \myfont
+\end{itemize}
+Indien dit commando geen resultaten geeft, zijn er geen VMB RPM''s geinstalleerd en kan worden verder gegaan met de installatie van VMB.
+
+Als via de console geconstateerd wordt dat VMB al ge\i{i}nstalleerd is of als het bovenstaande commando wel resultaten oplevert, moet VMB eerst gede-installeerd worden, voordat met de installatie begonnen kan worden. Normaal gesproken zou dat het geval moeten zijn. Voer na een de-installatie de bovenstaande stappen nogmaals uit.
+
+Zie voor instructies paragraaf 1.4.
+
+

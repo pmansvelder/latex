@@ -1,0 +1,5 @@
+1 & Voer de voorbereidingstappen uit volgens hoofdstuk 2. Download zowel de nieuwe geinstalleerde component als de oude, terug te plaatsen component, of gebruik de nog bestaande installatiedirectories.
+2 & Voer de voorbereidingsstappen zoals in hoofdstuk 11 t/m 4 bij de installatie van het betreffende component beschreven, zoals bijvoorbeeld het inlichten van gebruikers.
+3 & Deinstalleer de nieuwe component:
+ & \monofont weblogic\$ cd \$RELEASE/<component>/vostools-deploy/bin
+ & \monofont weblogic\$ ./run.sh configEAR.py -d \$PLATFORMCONF --undeploy

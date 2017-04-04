@@ -1,0 +1,24 @@
+DienstChange IDS
+Dienst VMB
+DienstEigenaar Peter Mansvelder
+DienstVersie 3.4.3
+DienstOmgeving Acceptatie
+DraaiboekVersie 1.0H
+DraaiboekStatus Concept
+DraaiboekOmschrijving Nieuwe versie van VMB van 3.4-2 naar 3.4-3. Geinstalleerde versie van 3.4-0 naar 3.4-2.
+DraaiboekAuteur Leon Niessen
+Copyright Copyright (c) 2017 ProRail
+GoedkeuringBedrijf ProRail
+GoedkeuringNaam Peter Mansvelder
+GoedkeuringFunctie Ketenbeheerder Treinbijsturing
+StartDatum 6 April 2017
+StartTijd 09:00
+EindTijd 17:00
+AppNodeA adccug.dc.post21.nl
+AppNodeB adccuh.dc.post21.nl
+AppNodeC adccuj.dc.post21.nl
+DBNodeA pads24.ad.post21.nl
+DBNodeB pads2c.ad.post21.nl
+EMSNodeA adccua.dc.post21.nl
+EMSNodeB adccub.dc.post21.nl
+InstallUser install\_beheer1

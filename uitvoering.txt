@@ -1,6 +1,0 @@
-1 & Log in op node 1 met je beheeraccount
- & \monofont \$ ssh appnode1
-2 & Vraag listing op
- & \monofont \$  ls -lia
-3 & Bepaal uptime van het systeem
- & \monofont \$ uptime

@@ -1,0 +1,9 @@
+VOS & Verkeersleiding Ondersteunend Systeem
+VMB & VKL Message Broker
+OSIRIS & Ondersteunende Services voor Interoperabele Rail Informatiesystemen
+CI & Common Interface
+UIS & Uitvoering Informatie Service
+BUIS & Buitenlands Uitvoerings informatie Service
+TIS & Train information system (van RailNet Europe)
+TAF / TSI & Telematic Applications for Freight / Technical Specification for Interoperability
+RNE & RailNet Europe

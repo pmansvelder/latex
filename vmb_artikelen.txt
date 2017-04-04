@@ -1,0 +1,7 @@
+1 & vmb_platform_aw1vmb-3.4-3.noarch.rpm & rpm
+1 & vmb_database-3.4-3.noarch.rpm & rpm
+1 & vmb_ems-3.4-3.noarch.rpm & rpm
+1 & vmb_linux-3.4-3.noarch.rpm & rpm
+1 & vmb_weblogic-3.4-3.noarch.rpm & rpm
+1 & vmb_files_aw1vmb-3.4-3.noarch.rpm & rpm
+1 & vmb_ear_aw1vmb-3.4-3.noarch.rpm & rpm
