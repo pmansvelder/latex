@@ -1,0 +1,5 @@
+De installatiebestanden worden als zip-files opgeleverd. Daarnaast worden voor de JEE6 componenten ook rpm's opgeleverd. Deze deliverables worden aan ProRail opgeleverd via FileSender (https://filesender.prorail.nl/filesender/) onder vermelding van het Marval nummer, indien van toepassing. Per release worden de rpm's verstuurd in een zip-file, waarbij al eerder geleverde versies nooit opnieuw worden geleverd.
+
+ProRail zorgt voor de ontvangst van de installatiebestanden vanaf FileSender en zorgt er voor dat deze beschikbaar komen vanaf de Satellite voor de installatie.
+
+

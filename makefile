@@ -1,5 +1,6 @@
 all: ict0026-draaiboek.tex 
 	sed -i 's#_#\\_#g' *.txt
+	sed -i 's#@#\\@#g' *.txt
 	sed 's/\(\w*\)\ \(.*\)/\\newcommand{\\\1}{{\2}}/' ids-parameters.txt > ids-parameters.tex
 	pdflatex ict0026-draaiboek.tex
 	pdflatex ict0026-draaiboek.tex

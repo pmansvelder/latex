@@ -1,0 +1,175 @@
+\subsection{Change aanmelden}
+
+Op Beproeving en Productie mogen alleen werkzaamheden uitgevoerd worden als de CSD goedkeuring heeft gegeven. deze stap geldt dus niet voor Acceptatie.
+Neem contact op met CSD om te melden dat change uitgevoerd wordt. 
+
+\subsection{Tijdregistratie}
+
+Noteer het starttijdstip van de voorbereidende werkzaamheden
+
+Begonnen om __________ uur
+
+\subsection{Wachtwoorden}
+
+Voor een installatie moet er ingelogd worden op WebLogic en Oracle servers. Voor JEE6 installaties moet er tevens ingelogd worden op de Tibco server.
+
+\subsubsection{Beproeving en Productie}
+
+Putty wordt gebruikt om in te loggen op een omgeving. Hiervoor wordt de 'install_vos' of 'install_beheer*' (* kan 1 t/m 5 zijn) user gebruikt. Het bijbehorende wachtwoord wordt beschikbaar gesteld door de CSD en is alleen geldig op de dag van de installatie. 
+
+\subsubsection{Acceptatie}
+
+Bij een remote installatie wordt gebruik gemaakt van putty om in te loggen. Indien de installatie op de Modelpost wordt uitgevoerd, wordt ssh gebruikt om in te loggen:
+
+\VerbatimInput{v1.cmd}
+
+In beide gevallen wordt de 'root' user gebruikt voor het inloggen met het default password.
+
+De wachtwoorden om in te loggen in de WebLogic console, in de VOS client applicaties en de Functioneel Beheer schermen zijn beschikbaar via KeePass op Beproeving en Productie, zie ook https://confluence.sogeti.nl/pages/viewpage.action?pageId=39190703. Ook zijn de wachtwoorden op te vragen bij de installatie-witness. Dit geldt voor Acceptatie, Beproeving en Productie. 
+
+\subsection{Inloggen}
+
+\subsubsection{Beproeving en Productie}
+
+Log in via putty op de onderstaande omgevingen met de 'install_vos' of 'install_beheer*' (* kan 1 t/m 5 zijn) user en wordt root-gebruiker:
+
+\VerbatimInput{v2.cmd}
+
+Weblogic (alleen de JEE5 omgeving)
+
+hostname = Zoals beschreven in [Omgeving 1]
+
+\subsubsection{Oracle}
+
+hostname  = Zoals beschreven in [Omgeving 2]
+
+Tibco (alleen van toepassing voor JEE6 componenten)
+
+hostname  = Zoals beschreven in [Omgeving 3]
+
+\subsubsection{Acceptatie}
+
+Voor een remote installatie, log in via putty op de onderstaande omgevingen met de 'root' user.
+
+Weblogic (alleen de JEE5 omgeving)
+
+hostname = Zoals beschreven in [Omgeving 1]
+
+\subsubsection{Oracle}
+
+hostname  = Zoals beschreven in [Omgeving 2]
+
+Tibco (alleen van toepassing voor JEE6 componenten)
+
+hostname  = Zoals beschreven in [Omgeving 3]
+
+Indien de installatie op de modelpost wordt uitgevoerd, log dan in met de 'root' user:
+
+\VerbatimInput{v1.cmd}
+
+\subsection{Logging inschakelen}
+
+Doe het volgende bij elke putty sessie
+
+Ga via het hoofdmenu en 'Change Settings...' naar de categorie 'Window'
+
+Zet de 'Lines of scrollback' op 2000000
+
+\subsection{Variabelen voor installatie}
+
+Bij het instellen van deze variabelen wordt verondersteld dat in het geval van een rollback altijd kan worden teruggevallen op de componenten die ge\"{i}nstalleerd zijn volgens \'{e}\'{e}n vorig changenummer. Dit is niet altijd het geval (zie 13 Appendix Changenummer en Rollback).
+
+Voer de volgende stappen uit op de weblogic- en oracleomgeving:
+
+\VerbatimInput{v3.cmd}
+
+Gebruik hierbij de volgende gegevens
+
+change-nummer = \ChangeNummer
+
+vorig-change-nummer = \VorigeChange
+
+domein = \Domain
+
+Weblogic
+
+Oracle
+
+\subsection{Download componenten}
+
+Voer de volgende stappen voor elke component uit op de oracle omgeving:
+
+\VerbatimInput{v6.cmd}
+
+Op de weblogic omgeving worden allen de JEE5 componenten gedownload. Zie [Omgeving 1] welke weblogic omgeving van toepassing is voor de componenten.
+
+Nieuwe versie = de versie zoals beschreven in [Installatie 1]
+
+Oude versie = de versie zoals beschreven in [Installatie 1]
+
+\begin{tabular}{| l | l | l | l | l | l | l | l|}
+\hline
+&VOS (JEE5)&BUS (JEE5)&ICS (JEE5)&UIS&BGS&PLN&TDR\\
+\hline
+Nieuwe versie&Weblogic&Weblogic&Weblogic& & & &\\
+\hline
+&Oracle&Oracle&Oracle&Oracle&Oracle&Oracle&Oracle\\
+\hline
+Oude versie&Weblogic&Weblogic&Weblogic& & & &\\
+\hline
+&Oracle&Oracle&Oracle&Oracle&Oracle&Oracle&Oracle\\
+\hline
+\end{tabular}
+
+\subsection{Java beschikbaar maken}
+
+Voor de automatische controles is Java vereist.
+
+Configureer het PATH op de JEE5 weblogic omgeving:
+
+\VerbatimInput{v4.cmd}
+
+\subsection{Controleer omgeving statussen}
+
+Controleer JEE5 weblogic servers:
+
+\VerbatimInput{c5.cmd}
+
+Controleer EMS:
+
+\VerbatimInput{c6.cmd}
+
+Word oracle gebruiker:
+
+\VerbatimInput{v2.cmd}
+
+Voer de volgende controle uit:
+
+Controleer database jobs:
+
+\VerbatimInput{c17.cmd}
+
+Check de huidige ORA-meldingen:
+
+\VerbatimInput{c9.cmd}
+
+Deze controle wordt na database upgrades nogmaals uitgevoerd. Het is dan de bedoeling dat gecontroleerd wordt dat er geen nieuwe ORA-meldingen bijkomen.
+
+\subsection{Voorbereiding afronden}
+
+De taken die als root uitgevoerd moeten worden zijn nu klaar.
+
+Sla de logging van de root gebruiker op door de terminaluitvoer naar een bestand te kopi\"{e}ren en deze zelf op te slaan.
+
+Weblogic
+Oracle
+
+\subsection{Tijdregistratie}
+
+Noteer het eindtijdstip van de voorbereidende werkzaamheden
+
+	Gestopt om __________ uur
+
+
+
+

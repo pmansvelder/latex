@@ -15,6 +15,24 @@
 \usepackage{array}
 \usepackage{colortbl}
 \usepackage{textcomp}
+\usepackage{verbatim}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyvrb}
+
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\small,
+ %
+ frame=single,  % top and bottom rule only
+ framesep=1em, % separation between frame and text
+ samepage=true,
+ rulecolor=\color{Gray},
+ fillcolor=\color{Yellow},
+ %
+ commandchars=\|\(\), % escape character and argument delimiters for
+                      % commands within the verbatim
+ commentchar=*        % comment character
+}
 
 %Function to read in text to table
 \ExplSyntaxOn

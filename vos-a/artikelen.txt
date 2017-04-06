@@ -1,0 +1,10 @@
+1 & rdbms-platform-resource-1-1.1-1 & Oracle platform rpm
+1 & ems-platform-resource-1-1.0-3 & Tibco platform rpm
+1 & jee-platform-resource-1-1.7-1.noarch & Weblogic platform rpm
+1 & linux-platform-resource-1-1.0-3.noarch & Linux platform rpm
+1 & uis_platform_aw1uis-1.14-0 & UIS Platform rpm
+1 & uis_database-1.0-2 & UIS database rpm
+1 & uis_ems-1.9-0 & UIS EMS rpm
+1 & uis_linux-1.3-1 & UIS linux platform rpm
+1 & uis_files-1.2-1 & UIS files platform rpm
+1 & uis_weblogic-1.2-0 & UIS Weblogic rpm
