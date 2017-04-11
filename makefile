@@ -26,5 +26,5 @@ osiris-b: osiris-b/ids-parameters.txt
 osiris-p: osiris-p/ids-parameters.txt
 	cp osiris-p/* .
 clean: 
-	rm ids-parameters.tex nodes.txt artikelen.txt 
+	rm *.cmd
 

@@ -18,6 +18,7 @@
 \usepackage{verbatim}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{fancyvrb}
+\usepackage{longtable}
 
 % redefine \VerbatimInput
 \RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
@@ -29,7 +30,7 @@
  rulecolor=\color{Gray},
  fillcolor=\color{Yellow},
  %
- commandchars=\|\(\), % escape character and argument delimiters for
+% commandchars=\|\(\), % escape character and argument delimiters for
                       % commands within the verbatim
  commentchar=*        % comment character
 }
@@ -312,13 +313,14 @@ Hoofdstuk 6 bevat het communicatieplan.
 \input{aandachtspunten.txt}
 
 \section{Uitvoering}
-\begin{tabular}{| l | p{15cm} |}
+%\begin{tabular}{| l | p{15cm} |}
+\begin{longtable}{| l | p{15cm} |}
 \hline
 \rowcolor[gray]{0.84}Stap & Omschrijving\\
 \hline
 \addcolumnfile{uitvoering.txt}
 \hline
-\end{tabular}
+\end{longtable}
 
 \section{Risico's}
 \begin{tabular}{| l | l | l | l | l|}
