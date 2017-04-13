@@ -1,0 +1,19 @@
+DienstChange Installatie adapters
+Dienst B2B
+DienstEigenaar Marc van Erkelens
+DienstVersie 2.0
+DienstOmgeving Beproeving
+DraaiboekVersie 0.1
+DraaiboekStatus Concept
+DraaiboekOmschrijving Installatie B2B-adapters op LLP-Beproeving
+DraaiboekAuteur Patrick Sijm / Hicham Oulalite
+Copyright Copyright (c) 2017 ProRail
+GoedkeuringBedrijf ProRail
+GoedkeuringNaam Marc van Erkelens
+GoedkeuringFunctie Ketenbeheerder ESB
+StartDatum 1 April 2017
+StartTijd 09:00
+EindTijd 17:00
+AppNodeA pdcs09.dc.post21.nl
+AppNodeB pdccmb.dc.post21.nl
+AppNodeC pdccmc.dc.post21.nl

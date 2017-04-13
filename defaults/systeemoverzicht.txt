@@ -1,0 +1,3 @@
+Installatiedraaiboek voor het upgraden van de VOS, BUS, ICS, PLN, BGS, UIS en TDR componenten op een bestaande VOS omgeving.
+Dit draaiboek beschrijft stap voor stap hoe deze change uitgevoerd wordt: het installeren van een aantal servicecomponenten van het VOS landschap. 
+Een volledige installatie bestaat uit de componenten genoemd in paragraaf \ref{artikelen}.

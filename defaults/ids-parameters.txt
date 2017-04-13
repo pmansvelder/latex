@@ -1,0 +1,28 @@
+DienstChange IDS
+Dienst VOS
+DienstEigenaar Peter Mansvelder
+DienstVersie 15.3
+DienstOmgeving Acceptatie
+DraaiboekVersie 1.4
+DraaiboekStatus Concept
+DraaiboekOmschrijving Technisch Draaiboek Installatie 15.3 Acceptatieomgeving
+DraaiboekAuteur Eric Plugge
+Copyright Copyright (c) 2017 ProRail
+GoedkeuringBedrijf ProRail
+GoedkeuringNaam Peter Mansvelder
+GoedkeuringFunctie Ketenbeheerder Treinbijsturing
+StartDatum 1 April 2017
+StartTijd 09:00
+EindTijd 17:00
+AppNodeA pdccmf.dc.post21.nl
+AppNodeB pdccmg.dc.post21.nl
+AppNodeC pdccmh.dc.post21.nl
+AppNodeD pdccjb.dc.post21.nl
+DBNodeA pads24.ad.post21.nl
+DBNodeB pads2c.ad.post21.nl
+EMSNodeA adccua.dc.post21.nl
+EMSNodeB adccub.dc.post21.nl
+InstallUser install\_beheer1
+ChangeNummer 394763
+VorigeChange 394675
+Domain pw1vos

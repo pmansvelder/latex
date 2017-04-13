@@ -11,9 +11,11 @@ vos-p:	vos-p/ids-parameters.txt
 vos-b: 	vos-b/ids-parameters.txt
 	cp vos-b/* .
 vos-a: 	vos-a/ids-parameters.txt
+	cp defaults/* .
 	cp vos-a/* .
 	./splitfiles.sh ./TECH-DBK-COMMANDO-REFERENTIE.txt
 vmb-a: vmb-a/ids-parameters.txt
+	cp defaults/* .
 	cp vmb-a/* .
 b2b-b: b2b-bepr.txt
 	./convert_txt.sh b2b-bepr.txt ids-parameters.tex

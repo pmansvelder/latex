@@ -1,0 +1,28 @@
+ & \textbf{Start van de Installatie}
+1 & Noteer het starttijdstip van de werkzaamheden: begonnen om ......... uur.
+2 & Log in op \AppNodeA \ als \emph{\InstallUser} en wordt weblogic user:
+ & \VerbatimInput{v2.cmd}
+3 & Log in op \DBNodeA \ als \emph{\InstallUser} en wordt oracle user:
+ & \VerbatimInput{v2.cmd}
+4 & De weblogic gebruiker moet java kunnen gebruiken, dus configureer het PATH:
+ & \VerbatimInput{v4.cmd}
+5& Zet de installatievariabelen: Omdat er nu als een andere gebruiker is ingelogd moeten de installatievariabelen opnieuw ingesteld worden, voer het volgende uit:
+& \VerbatimInput{v3.cmd} 
+& Gebruik daarbij de volgende gegevens: \newline change-nummer = \ChangeNummer \newline vorig-change-nummer = \VorigeChange \newline domein = \Domain \newline Weblogic \newline Oracle
+6 & Zet de installatievariabelen: \newline Deze stap wordt op Acceptatie doorgaans overgeslagen. Putty sessies kunnen uitvallen als gevolg van storingen. In dat geval is de logging in het putty-scherm ook verloren. Configureer daarom de logging voor de installatiegebruikers: 
+& \VerbatimInput{v5.cmd}
+7 & Generieke pre-installatie aanpassingen:
+7.1& \textbf{BGS-FB}
+& Er dient een systeeminstelling gewijzigd te worden in BGS. Deze wijziging dient gedaan te worden nadat alle gebruikersessies zijn afgesloten, maar voordat de (de)installatie van VOS begint.
+& Login in BGS-FB 
+& Klik VOS instellingen 
+& Klik Systeeminstellingen 
+& Klik BER 
+& Wijzig het versienummer van TDR van 1 naar 2 in 'URL naar TDR': '...dossiers/v1/' dient te worden '...dossiers/v2/' 
+& Publiceer de VOS instellingen
+7.2& \textbf{VOS}
+& Er moet een queue property aangepast worden. Let op; dit commando dient op de actieve ems node uitgevoerd te worden! Volg de stappen:
+& \VerbatimInput{i17.cmd} 
+& \monofont \small setprop queue A.Bijsturing.PlanService.5.PlanelementGewijzigd.Event.1.VOS.2 maxRedelivery=5
+8&Tijdregistratie
+& Noteer het eindtijdstip van de voorbereidende werkzaamheden: Gestopt om ......... uur
