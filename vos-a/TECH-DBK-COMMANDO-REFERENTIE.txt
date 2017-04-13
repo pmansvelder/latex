@@ -1,0 +1,881 @@
+TECH-DBK-COMMANDO-REFERENTIE
+versie 1.3
+19-01-2015
+
+-------	Appendix (S): Extra handelingen op Schoon platform
+
+## S.1	Vos user aanmaken in EMS
+Ga naar de vostools-platform/bin directory in de VOS component.
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --user
+
+## S.2	VOS ConnectionFactories verwijderen in EMS
+Ga naar de vostools-platform/bin directory in de VOS component.
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --remove --cf
+
+## S.3	VOS ConnectionFactories aanmaken in EMS
+Ga naar de vostools-platform/bin directory in de VOS component.
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --cf
+
+## S.4	VMB queues aanmaken voor VOS, VOSEXT en BUS
+Ga naar de vostools-platform/bin directory in de VOS en BUS componenten.
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --vmbqueues
+
+## S.5	SQLAuthenticator aanmaken via configAuthentication script
+Ga naar de vostools-platform/bin directory in de VOS component.
+  weblogic$ ./run.sh configAuthentication.py -d $PLATFORMCONF --install --sql
+
+## S.6	fbroles aanmaken via configAuthentication script
+Ga naar de vostools-platform/bin directory in de VOS component.
+  weblogic$ ./run.sh configAuthentication.py -d $PLATFORMCONF --install --fbroles
+
+## S.7	fbuser aanmaken via configAuthentication script
+Ga naar de vostools-platform/bin directory in de VOS component.
+  weblogic$ ./run.sh configAuthentication.py -d $PLATFORMCONF --install --fbuser
+
+## S.8	VOS FunctioneelBeheer gebruiker aanmaken
+Start sqlplus op op de Oracle node met user VOS_OWNER/VOS.
+Run het script om de fb gebruiker aan te maken.
+  SQL> @$RELEASE/vos/vostools-deploy/db/createFBUser.sql
+
+## S.9	Controleer de geinstalleerde rpm's op een server
+
+Voor de controle van platform-resource rpm's
+  root$ rpm -qa | grep platform
+
+Voor de controle van uis/pln/bgs rpm's
+Voor UIS:
+  root$ rpm -qa | grep uis
+Voor BGS:
+  root$ rpm -qa | grep bgs
+Voor PLN:
+  root$ rpm -qa | grep pln
+Voor TDR:
+  root$ rpm -qa | grep tdr
+
+
+-------	Appendix (V): Voorbereiding
+
+## V.1	Inloggen op een omgeving
+De installatie wordt via een ssh-verbinding op een server uitgevoerd.
+  gebruiker@localhost$ ssh <bhr_user>@<hostname>
+  <bhr_user>@hostname's password: <wachtwoord>
+  <bhr_user>@hostname#
+
+## V.2	Een andere gebruiker worden
+De installatie wordt uitgevoerd als een specifieke gebruiker. Om een andere gebruiker (o.a. root) te worden kan het volgende commando worden gebruikt.
+  <bhr_user>$ sudo su - <user>
+  <user>$
+Na de installatie kan uitgelogd worden met
+  <user>$ exit
+  <bhr_user>$
+
+## V.3	Variabelen defini ren en aanmaken tijdelijke directories
+Variabelen worden gedefinieerd voor veel gebruikte waarden die niet veranderen gedurende de installatie.
+  <user>$ export RELEASE=/tmp/<change-nummer>
+  <user>$ mkdir -p $RELEASE
+  <user>$ export VORIGERELEASE=/tmp/<vorig-change-nummer>
+  <user>$ mkdir -p $VORIGERELEASE
+  <user>$ export PLATFORMCONF=<domein>
+Deze stap blijft actief zolang er ingelogd is op de omgeving. Het is belangrijk dat alle stappen onder deze gebruiker worden uitgevoerd. Als er opnieuw ingelogd wordt dient deze stap opnieuw uitgevoerd te worden.
+
+## V.4	Java aan $PATH toevoegen
+De bin-map van een java installatie moet aan de PATH-variabele worden toegevoegd voordat de scripts werken.
+
+Vind een installatie van java op de omgeving
+  <user>$ find /opt -name java | grep jre
+Dit geeft   n of meer regels terug in de volgende vorm:
+/opt/oracle/middleware/jrockit_160_37/jre/bin/java
+/opt/oracle/java/jdk1.8.0_31/jre/bin/java
+
+Voeg de regel van begin tot-en-met de laatste  bin  toe aan de PATH variabele
+Voor EE5 deployment:
+  <user>$ export PATH=$PATH:/opt/oracle/middleware/jrockit_160_37/bin
+Voor EE6-deployment:
+  <user>$ export PATH=$PATH:/opt/oracle/java/jdk1.8.0_31/jre/bin
+
+Met het volgende kan gecontroleerd worden of het PATH goed gezet is
+  <user>$ java -version
+  
+## V.5	Logging configureren
+Dit commando is niet componentspecifiek, het maakt daarom niet uit welk <component> wordt gebruikt.
+Van de gehele installatie dient na afloop een log overlegd te worden. De vostools bieden hier de middelen voor.
+
+Start de logging als volgt, er verschijnt dan een melding dat het loggen is gestart.
+  <user>$ $RELEASE/<component>/vostools-shared/bin/voslog.sh --start
+Als het installatieproces is afgelopen kan de logging worden gestopt.
+  <user>$ $RELEASE/<component>/vostools-shared/bin/voslog.sh --stop
+Het logbestand kan in een leesbaar formaat worden afgedrukt met het printstatement:
+  <user>$ $RELEASE/<component>/vostools-shared/bin/voslog.sh --print > $RELEASE/installatie_log_$(date +%s).log
+Deze stap blijft actief zolang er ingelogd is op de omgeving. Het is belangrijk dat alle stappen onder deze gebruiker worden uitgevoerd. Als er opnieuw ingelogd wordt dient deze stap opnieuw uitgevoerd te worden.
+
+## V.6	Download bestanden van provisioning
+De benodigde bestanden worden gedistribueerd via provisioning. Deze worden met het volgende commando gedownload.
+
+N.B. Zorg ervoor dat de variabele $RELEASE (of $VORIGERELEASE) goed gezet is, anders gaat het prorail_install script software downloaden en installeren uit een default directory !
+
+  root$ prorail_install.sh prorail <component> <versie> <release-map>
+  root$ chown -R <user>. <release-map>
+De waarde voor <release-map> is $RELEASE of $VORIGERELEASE, afhankelijk van de versie die wordt gedownload
+
+## V.7	run.sh script gebruiken voor WebLogic 12.1.3
+  weblogic$ export BEA_HOME=/opt/oracle/wls_12.1.3
+
+-------	Appendix (P): Platform
+
+## P.1	Configureren JTA
+Dit commando is niet componentspecifiek, het maakt daarom niet uit welk <component> wordt gebruikt.
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+Installeer de JTA-configuratie
+  weblogic$ ./run.sh configWeblogic.py -d $PLATFORMCONF --install --jta
+
+## P.2	Configureren server startparameters voor <component>
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+Installeer de server startconfiguratie
+  weblogic$ ./run.sh configWeblogic.py -d $PLATFORMCONF --install --start
+
+## P.3	Verwijderen datasources voor <component> (script)
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configWeblogic.py -d $PLATFORMCONF --remove --ds
+Controleer via [C.2] of de datasources daadwerkelijk zijn verwijderd.
+
+## P.4	Verwijderen datasources voor <component> (handmatig)
+ 	Navigeer in de weblogic beheerapplicatie (zie Omgeving 1) naar:
+Services -> Datasources
+
+Verwijder eerst de multi-datasource
+ 	Start een edit sessie met de "Lock & Edit"-knop (linksboven).
+ 	Selecteer de datasources van het type "Multi" voor <component>
+ 	Verwijder via de "Delete" knop
+ 	Activeer de wijzigingen met "Activate changes" (linksboven).
+
+Verwijder vervolgens de nodes.
+ 	Selecteer de datasources van het type "Generic" voor <component>
+ 	Verwijder via de "Delete" knop
+ 	Activeer de wijzigingen met "Activate changes" (linksboven).
+
+## P.5	Installeren datasources voor <component>
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configWeblogic.py -d $PLATFORMCONF --install --ds
+Controleer via [C.2] of de nieuwe datasources daadwerkelijk zijn aangemaakt
+
+## P.6	Configureren JMS modules voor <component>
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+Verwijder eerst de bestaande JMS module uit weblogic en de ConnectionFactory uit Tibco
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --remove --weblogic --cf
+Installeer nu de nieuwe ConnectionFactory en JMS module
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --weblogic --cf --user
+Controleer via [C.3] of de JMS module is aangemaakt in weblogic
+
+## P.7	Installeren EMS Connection Factories voor <component>
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --cf --user
+
+## P.8	Installeren SQL Authenticator
+Dit commando gebruikt altijd de configuratie van het VOS-component
+Authenticators verzorgen het inloggen voor weblogic en de applicaties
+  weblogic$ cd $RELEASE/vos/vostools-platform/bin
+  weblogic$ ./run.sh configAuthenticators.py -d $PLATFORMCONF --install --sql
+
+## P.9	Installeren Functioneel beheer gebruiker
+Dit commando gebruikt altijd de configuratie van het VOS-component
+Authenticators verzorgen het inloggen voor weblogic en de applicaties
+  weblogic$ cd $RELEASE/vos/vostools-platform/bin
+  weblogic$ ./run.sh configAuthentication.py -d $PLATFORMCONF --install --fbroles
+
+## P.10	Control flag authenticator aanpassen
+ 	Navigeer in de weblogic beheerapplicatie (zie Omgeving 1) naar:
+Security Realms -> "myrealm" -> Tabblad: Providers -> "<provider>"
+ 	Start een edit sessie met de "Lock & Edit"-knop (linksboven).
+ 	Selecteer de waarde "<control-flag>".
+ 	Sla de wijzigingen op met de "Save"-knop.
+ 	Activeer de wijzigingen met "Activate changes" (linksboven).
+
+## P.11	Tibco library in Weblogic installeren
+Dit commando is niet componentspecifiek, het maakt daarom niet uit welk <component> wordt gebruikt.
+Definieer de $RELEASE variabele opnieuw op <server> of vul hem zelf in in onderstaand commando.
+  weblogic@<server>$ scp bhr_<user>:/mnt/weblogic/domains/<domain>/lib/tibjms-5.1.jar $RELEASE/<component>/vostools-shared/lib/tibjms.jar
+
+## P.12	Logdirectory aanmaken
+  bhr_user# mkdir -p <directory>
+  bhr_user# chown <user>: <directory>
+
+## P.13	Flashback uitschakelen
+Log in op de database
+  oracle$ . oraenv
+  ORACLE_SID = [oracle] ? <sid>
+  oracle$ sqlplus / as sysdba
+Controleer eerst of flashback inderdaad aan staat
+  SQL> SELECT flashback_on FROM v$database;
+Indien er in de uitvoer nu "YES" staat, schakelen we flashback uit met de volgende query.
+  SQL> ALTER DATABASE FLASHBACK OFF;
+Controleer nogmaals of flashback aan staat. De uitvoer zal nu "NO" zeggen.
+
+## P.14	Herstarten van een cluster
+Na platformwijzigingen moet een cluster worden herstart om de wijzigingen te activeren. Het volgende commando herstart het cluster van een component.
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh controlWeblogic.py -d $PLATFORMCONF --restart
+
+## P.15	Herstarten adminserver
+  <bhr_user>$ sudo /etc/init.d/wlsServers restart <domain>-adminServer
+
+## P.16	Herstarten specifieke servers of clusters
+Dit commando is niet componentspecifiek, het maakt daarom niet uit welk <component> wordt gebruikt.
+Door expliciet servers op te geven voor het herstarten (komma gescheiden, geen spatie) is er meer controle beschikbaar over dit proces. Targets kunnen namen van clusters of servers zijn.
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh controlWeblogic.py -d $PLATFORMCONF --restart --targets <targets>
+
+## P.17	Verwijderen VMB queues
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --remove --vmbqueues
+
+## P.18	Installeren VMB queues
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --vmbqueues
+
+## P.19	Verwijderen EMS Connection Factories
+  weblogic$ cd $RELEASE/<component>/vostools-platform/bin
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --remove --cf
+
+-------	Appendix (I): Installatie
+
+## I.1	Aanmaken database back-uplocatie
+Maak een map aan in het filesystem
+  root$ mkdir -p /mnt/orabackup/vosdumps
+  root$ chown -R oracle. /mnt/orabackup/vosdumps
+
+## I.2	Back-up database
+Login op de database
+  oracle$ . oraenv
+  ORACLE_SID = [oracle] ? <sid>
+Het commando voor de backup is voor elk component:
+  oracle$ expdp <schema_naam>/<schema_password> dumpfile=expdp_<schema_naam>.dmp logfile=expdp_<schema_naam>.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+
+Van sommige versies moet de database back-up langere tijd bewaard worden. Deze back-up wordt dan gebruikt voor een rollback, voorafgaand aan de installatietest voor productie. Als dit het geval is, geef de logfile dan een naam met bijvoorbeeld de datum erin, zodat deze niet meer overschreven wordt.
+
+Hieronder is het commando voor de afzonderlijke componenten met ingevulde placeholder:
+  oracle$ expdp VOS_OWNER/VOS dumpfile=expdp_VOS_OWNER.dmp logfile=expdp_VOS_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp BUS_OWNER/BUS dumpfile=expdp_BUS_OWNER.dmp logfile=expdp_BUS_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp PLN_OWNER/PLN dumpfile=expdp_PLN_OWNER.dmp logfile=expdp_PLN_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp BGS_OWNER/BGS dumpfile=expdp_BGS_OWNER.dmp logfile=expdp_BGS_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp ICS_OWNER/ICS dumpfile=expdp_ICS_OWNER.dmp logfile=expdp_ICS_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp UIS_OWNER/UIS dumpfile=expdp_UIS_OWNER.dmp logfile=expdp_UIS_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp TDR_OWNER/TDR dumpfile=expdp_TDR_OWNER.dmp logfile=expdp_TDR_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+  oracle$ expdp VOSEXT_OWNER/VOSEXT dumpfile=expdp_VOSEXT_OWNER.dmp logfile=expdp_VOSEXT_OWNER.log directory=VOS_DUMP reuse_dumpfiles=Y compression=ALL
+
+Als dit fout gaat terwijl de dump directory wel bestaat moeten de grants nog toegekend worden aan de schema's
+  oracle$ sqlplus / as sysdba
+  SQL> GRANT READ, WRITE ON DIRECTORY VOS_DUMP TO <schema_naam>;
+  SQL> exit
+
+## I.3	Installeer de database
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+Voer de installatie uit
+  oracle$ ./run.sh configDB.py -d $PLATFORMCONF --install
+Controleer dat de nieuw ge nstalleerde versie overeenkomt met de versie uit Installatie 1,
+door in de uitvoer van het commando hierboven te kijken.
+Controleer dat er geen fouten zijn opgetreden via [C.9].
+
+## I.4	Upgrade de database
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+Voer de upgrade uit
+  oracle$ ./run.sh configDB.py -d $PLATFORMCONF --upgrade
+Controleer dat de nieuw ge nstalleerde versie overeenkomt met de versie uit Installatie 1,
+door in de uitvoer van het commando hierboven te kijken.
+Controleer dat er geen fouten zijn opgetreden via [C.9].
+
+## I.5	De nstalleer component
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+Verwijder de component
+  weblogic$ ./run.sh configEAR.py -d $PLATFORMCONF --undeploy
+De volgende melding is een gevolg van de gebruikte scripting en kan genegeerd worden.
+<Warning><WLContext.close() was called in a different thread than the one in which it was created.>
+Controleer via [C.1] dat er geen versies van <component> meer ge nstalleerd zijn. Verwijder deze zo nodig met de hand in dit venster door de versie te selecteren, op de Delete-knop te drukken en te accorderen.
+
+## I.6	Installeer component
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+Deploy de nieuwe component
+  weblogic$ ./run.sh configEAR.py -d $PLATFORMCONF --deploy
+De volgende melding is een gevolg van de gebruikte scripting en kan genegeerd worden.
+<Warning><WLContext.close() was called in a different thread than the one in which it was created.>
+
+## I.7	Uitschakelen <component>
+1.	Log in op de beheerapplicatie van weblogic (zie Omgeving 1)
+2.	Navigeer via het menu naar
+ 	Environment
+ 	Servers
+ 	Tabblad "Control"
+3.	Selecteer alle servers voor <component>
+4.	Klik op "Suspend" ? "Force suspend now"
+
+Later kunnen de servers weer gestart worden door deze te selecteren en "Resume" te activeren.
+
+## I.8	Stoppen van een managed server
+Log in op de Weblogic console. Gebruik de Beheerapplicatie URL uit [Omgeving 1] Weblogicgegevens. Navigeer naar Environment -> Servers. Selecteer de tab control.
+
+Voer voor de server instances van het component <component> de volgende handelingen uit.
+ 	Selecteer de server instances van de component <component>:
+ 	Klik Shutdown -> Force shutdown now.
+ 	Ververs het scherm geregeld (auto-refresh). Wacht totdat de geselecteerde servers de status SHUTDOWN hebben.
+
+## I.9	Starten van een managed server
+Log in op de Weblogic console. Gebruik de Beheerapplicatie URL uit [Omgeving 1] Weblogicgegevens. Navigeer naar Environment -> Servers. Selecteer de tab control.
+
+Voer voor de server instances van het component <component> de volgende handelingen uit.
+ 	Selecteer de server instances van de component <component>:
+ 	Ververs het scherm geregeld (auto-refresh). Wacht totdat de geselecteerde servers de status SHUTDOWN hebben.
+ 	Selecteer opnieuw deze servers en klik Start.
+ 	Wacht totdat de servers de status RUNNING hebben.
+
+## I.10	Deinstalleer EMS Topics en Queues
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+
+Deinstalleer topics/queues/bridges
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --remove --all
+  
+## I.11  Controleren of de map vos_dump in de database bestaat
+Er moet worden gecontroleerd of in de database de map "vos_dump" bestaat. Deze map moet voorkomen in de lijst na het uitvoeren van de volgende commando s.
+  oracle$ . oraenv
+Voer het SID in
+  oracle$ sqlplus / as sysdba
+  SQL> select * from dba_directories;
+Als "vos_dump" niet in deze lijst voorkomt kan deze met de volgende commando s worden aangemaakt.
+  SQL> create directory vos_dump as '/mnt/orabackup/vosdumps';
+  SQL> GRANT READ, WRITE ON DIRECTORY VOS_DUMP TO <schema_naam>;
+Verlaat SQL*Plus
+  SQL> exit
+  
+## I.12  Controleren of het snapshot mechanisme op de opleidingsomgeving nog goed werkt
+  oracle$ . oraenv
+Voer het SID in
+  oracle$ sqlplus <schema_naam>/<schema_password>  
+  
+Controleer of de referentiedatum de datum van vandaag is.
+  SQL> SELECT value FROM SCO_CONFIG_ITEM WHERE key='kopieerinstelling.referentie_datum';
+  
+Controleer of jobs van gisteren de status SUCCEEDED hebben
+  SQL> SELECT owner, job_name, log_date, status, error#, actual_start_date, run_duration, additional_info FROM user_scheduler_job_run_details WHERE actual_start_date > sysdate - 2;
+
+Sluit SQLPlus af
+  SQL> exit
+
+## I.13  Snapshot kopi ren naar basistabellen op de opleidingsomgeving
+  oracle$ . oraenv
+Voer het SID in
+  oracle$ sqlplus <schema_naam>/<schema_password>  
+  
+Ververs het snapshot met de kopieer procedure
+  SQL> exec <component>_kopieer_tabellen.ververs_tabellen_voor_vandaag
+  
+Sluit SQLPlus af
+  SQL> exit
+
+## I.14  Snapshot verversen op de opleidingsomgeving
+  oracle$ . oraenv
+Voer het SID in
+  oracle$ sqlplus <schema_naam>/<schema_password>  
+  
+Ververs het snapshot met de kopieer procedure
+  SQL> exec <component>_kopieer_tabellen.ververs_snapshot 
+  
+Sluit SQLPlus af
+  SQL> exit
+  
+## I.15  Opschonen EMS Topics en Queues
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+
+Opschonen topics/queues/bridges
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --clean --all
+
+## I.16  Opschonen EMS Topics en Queues met de oude prefix
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+
+Opschonen deprecated topics/queues/bridges met oude prefix
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --clean --all-oldprefix
+
+Opschonen topics/queues/bridges met oude prefix
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --remove --all-oldprefix
+
+## I.17 Handmatig creeeren en verwijderen van bridges
+Deze handmatige stap staat hier tijdelijk, omdat er bridges gemaakt moeten worden naar topics van niet-VOS componenten die niet altijd de juiste prefix hebben. Hier kunnen de VOSTool -scripts niet mee overweg. De commando's die hieronder gegeven zijn, zijn voorbeeld commando's voor de modelpost. Voor een andere omgeving dient een andere hostname genomen te worden.
+
+LET OP: DIT MOET UITGEVOERD WORDEN OP DE ACTIEVE EMS NODE
+
+1) login als root op de tibco server en start tibemsadmin
+
+login as: root
+root@pads22.ad.post21.nl's password:
+Last login: Fri Jun 19 11:48:53 2015 from pads30.ad.post21.nl
+Ongeautoriseerd gebruik van dit computersysteem en de daaraan gekoppelde apparatuur en programmatuur is verboden.
+
+[root@pads22 ~]# cd /home/tibco/
+[root@pads22 tibco]# tibemsadmin
+
+      Let op: In een omgeving met EMS7 (momenteel ACC en PROD) wordt tibemsadmin als volgt  gestart:
+      # /opt/tibco/ems/7.0/bin/tibemsadmin
+
+
+2) maak een connectie naar de juiste ems-instantie
+
+> connect tcp://pads22.ad.post21.nl:7226
+Login name (admin): admin
+Password:
+Connected to: tcp://pads22.ad.post21.nl:7226
+
+3) bekijk welke bridges er zijn voor een topic
+
+tcp://pads22.ad.post21.nl:7226> show bridge topic P.Beheersing.TreinPositieService.1.TreinPositieGewijzigd.Event.2
+
+4) creeer een bridge
+
+tcp://pads22.ad.post21.nl:7226> create bridge source=topic:P.Beheersing.TreinPositieService.1.TreinPositieGewijzigd.Event.2 target=queue:A.ESB.UitvoeringInformatieService.1.TreinPositieService.1.TreinPositieGewijzigd.Event.2
+
+5) verwijder een bridge
+
+tcp://pads22.ad.post21.nl:7226> delete bridge source=topic:P.Beheersing.TreinPositieService.1.TreinPositieGewijzigd.Event.2 target=queue:avos.ESB.UitvoeringInformatieService.1.TreinPositieService.1.TreinPositieGewijzigd.Event.2
+
+## I.18 Installatie van rpm's op een server
+
+Wanneer er rpm s ge nstalleerd gaan worden op een server, moet eerst   nmalig het volgende uitgevoerd worden
+
+  root$ yum clean all
+
+Voor het installeren van een rpm wordt hieronder een voorbeeld van een commando gegeven:
+
+  root$ yum install uis_platform_aw1uis-1.0-0
+
+## I.19 Commando's voor het creeren van UIS bridges
+
+Controleer eerst op de bridges al bestaan zoals beschreven in I.17. Zo niet maak ze aan met de onderstaande commando's
+
+Voor Acceptatie
+create bridge source=topic:P.Beheersing.TreinPositieService.1.TreinPositieGewijzigd.Event.2 target=queue:A.ESB.UitvoeringInformatieService.1.TreinPositieService.1.TreinPositieGewijzigd.Event.2
+create bridge source=topic:A.Beheersing.MeetpuntenConfiguratieService.1.MeetpuntenconfiguratieGewijzigd.Event.2 target=queue:A.ESB.UitvoeringInformatieService.1.MeetpuntenconfiguratieService.1.MeetpuntenconfiguratieGewijzigd.Event.2
+create bridge source=topic:A.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1 target=queue:A.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1.PVB.1
+(De onderstaande bridge alleen aanmaken als er geen VOS installatie volgt)
+create bridge source=topic:A.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1 target=queue:A.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1.VOS.2
+
+Voor Beproeving
+create bridge source=topic:P.Beheersing.TreinPositieService.1.TreinPositieGewijzigd.Event.2 target=queue:B.ESB.UitvoeringInformatieService.1.TreinPositieService.1.TreinPositieGewijzigd.Event.2
+create bridge source=topic:B.Beheersing.MeetpuntenConfiguratieService.1.MeetpuntenconfiguratieGewijzigd.Event.2 target=queue:B.ESB.UitvoeringInformatieService.1.MeetpuntenconfiguratieService.1.MeetpuntenconfiguratieGewijzigd.Event.2
+(De onderstaande bridge alleen aanmaken als er geen VOS installatie volgt)
+create bridge source=topic:B.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1 target=queue:B.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1.VOS.2
+
+Voor Productie
+create bridge source=topic:P.ESB.T.BewakenUitvoeringService.1.TreinuitvoeringsinformatieGemaakt.Event.1 target=queue:P.ESB.UitvoeringInformatieService.1.BewakenUitvoeringService.1.TreinuitvoeringsinformatieGemaakt.Event.1
+create bridge source=topic:P.Beheersing.MeetpuntenConfiguratieService.1.MeetpuntenconfiguratieGewijzigd.Event.2 target=queue:P.ESB.UitvoeringInformatieService.1.MeetpuntenconfiguratieService.1.MeetpuntenconfiguratieGewijzigd.Event.2
+(De onderstaande bridge alleen aanmaken als er geen VOS installatie volgt)
+create bridge source=topic:P.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1 target=queue:P.Bijsturing.UitvoeringsInformatieService.1.UitvoeringGewijzigd.Event.1.VOS.2
+
+## I.20	verwijder deprecated queue's, topic en bridges
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+verwijder deprecated topics/queues/bridges
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --clean --all
+
+## I.21 verwijder deprecated bridges en queue's bij installatie UIS 2.9.2
+Voor Accepatatie
+delete bridge source=topic:A.PlanService.3.PlanGewijzigd.Event.1 target=queue:A.Bijsturing.PlanService.3.PlanGewijzigd.Event.1.UIS.2
+delete bridge source=topic:A.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1 target=queue:A.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1.UIS.2
+delete queue A.Bijsturing.PlanService.3.PlanGewijzigd.Event.1.UIS.2 
+delete queue A.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1.UIS.2 
+
+Voor Beproeving
+delete bridge source=topic:B.PlanService.3.PlanGewijzigd.Event.1 target=queue:B.Bijsturing.PlanService.3.PlanGewijzigd.Event.1.UIS.2
+delete bridge source=topic:B.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1 target=queue:B.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1.UIS.2
+delete queue B.Bijsturing.PlanService.3.PlanGewijzigd.Event.1.UIS.2 
+delete queue B.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1.UIS.2 
+
+Voor Productie
+delete bridge source=topic:P.PlanService.3.PlanGewijzigd.Event.1 target=queue:P.Bijsturing.PlanService.3.PlanGewijzigd.Event.1.UIS.2
+delete bridge source=topic:P.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1 target=queue:P.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1.UIS.2
+delete queue P.Bijsturing.PlanService.3.PlanGewijzigd.Event.1.UIS.2 
+delete queue P.Bijsturing.PlanService.3.PlanelementGewijzigd.Event.1.UIS.2 
+
+## I.22 Upgrade EMS rpm s
+1. Voer [S.9] uit om te verifieren welke versie van de <component>_ems rpm ge nstalleerd zijn. Er zijn twee EMS servers. Indien er op een server
+geen rpm's geinstalleerd zijn, voer deze stap dan uit op de andere EMS server.
+
+Let op: Als gevolg van de EMS migratie draait tibco op nieuwe servers en is het mogelijk dat er voor een component geen geinstalleerde rpm's te vinden zijn. In dat geval moet het huidige draaiboek 
+        vergeleken worden met de vorige versie van het draaiboek, om te checken of er sprake is van een nieuwe versie van de <component>_ems rpm.
+
+2. Indien volgens het TECH-DBK-[versie]-[omgeving] document een nieuwe versie van de <component>_ems rpm beschikbaar is, voer het volgende uit als
+root en controleer hierbij dat het rpm versienummer juist is:
+  root$ yum clean all
+  root$ yum update <component>_ems-<nieuw-versienummer>
+(Als er een nieuwere versie van de <component>_platform_<omgeving> rpm hoeft deze niet expliciet op de EMS omgeving neergezet te worden. 
+Als er een nieuwe <component>_ems rpm wordt geinstalleerd wordt gaat de platform RPM automatisch mee)
+
+## I.23 Upgrade WebLogic rpm s
+1. Voer [S.9] uit om te verifieren welke versie van de <component>_platform_<omgeving> rpm momenteel ge nstalleerd is.
+2. Indien volgens het TECH-DBK-[versie]-[omgeving] document een nieuwe versie van de <component>_platform_<omgeving> rpm beschikbaar is, voer dan het 
+volgende uit als root:
+  root$ yum clean all
+  root$ yum update <component>_platform_<omgeving>-<nieuw-versienummer>
+
+## I.24 Installeer component configuratie
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+Installeer component configuratie
+  oracle$ ./run.sh configComponent2.py -d $PLATFORMCONF --install
+
+## I.25 Installeer topics/queues/bridges
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+Installeer topics/queues/bridges
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --all
+
+
+-------	Appendix (C): Controle
+
+## C.1	Overzicht ge nstalleerde applicaties weblogic
+1.	Log in op de beheerapplicatie van weblogic (zie Omgeving 1)
+2.	Navigeer via het menu naar
+ 	Deployments
+3.	Er wordt nu een overzicht getoond van de ge nstalleerde applicaties en hun status. Een correct ge nstalleerde applicatie heeft als State  active  en als Health    OK 
+
+## C.2	Overzicht ge nstalleerde datasources weblogic
+1.	Log in op de beheerapplicatie van weblogic (zie Omgeving 1)
+ 	Navigeer via het menu naar
+ 	Services
+ 	Datasources
+2.	Er wordt nu een overzicht getoond van de ge nstalleerde datasources. Er bestaat per component   n datasources van het type 'Multi', en   n of meer (gelijk aan het aantal databases, zie Omgeving 2) van het type 'Generic'.
+3.	'Generic' datasources kunnen getest worden
+ 	Tabblad Monitoring
+ 	Klik op de naam van de testen datasource
+ 	Selecteer tabblad Testing
+ 	Selecteer een target
+ 	Klik op de "Test Data Source"-knop en controleer of deze succesvol is: dan wordt het testresultaat in  t groen weergegeven.
+
+## C.3	Overzicht ge nstalleerde JMS modules weblogic
+1.	Log in op de beheerapplicatie van weblogic (zie Omgeving 1)
+2.	Navigeer via het menu naar
+ 	Services
+ 	Messaging
+ 	JMS Modules
+3.	Er wordt nu een overzicht getoond van de ge nstalleerde JMS modules. Er bestaat per component   n JMS module. Daarnaast is er een module voor VMB.
+4.	Klik op een JMS module. Er wordt nu een lijst getoond met   n ForeignServer. Behalve voor het component VOS, daar zijn twee ForeignServers ge nstalleerd.
+
+## C.4	Database versie
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+Het volgende commando vraagt de ge nstalleerde versie van de database op. Vergelijk de versie van de database met die uit Tabel 1 - Applicatiegegevens..
+  oracle$ ./run.sh checkDB.py -d $PLATFORMCONF --schema
+
+## C.5	Controleer status Weblogic servers
+Deze stap kan handmatig of via script uitgevoerd worden
+
+Ga naar de vostools-platform/bin directory in de   n van de componenten.
+  weblogic$ ./run.sh checkWeblogic.py -d $PLATFORMCONF --servers
+
+Alle servers dienen State 'RUNNING' en Health 'OK' te hebben. Er staan geen VOS-gerelateerde zaken in de restart of unactivated changes lijst. Indien van toepassing moeten er managed servers herstart worden.
+
+HANDMATIG
+1.	Log in op de beheerapplicatie van Weblogic (zie Omgeving 1)
+2.	Navigeer naar:
+ 	Environment
+ 	Servers
+3.	Alle servers dienen State 'RUNNING' en Health 'OK' te hebben.
+4.	Navigeer naar:
+ 	View changes and restarts
+ 	Restart Checklist
+5.	Geen van de managedservers van de VOS componenten staat in de restart list. Als dat wel het geval is deze servers herstarten.
+
+## C.6	Controleer Status EMS servers
+Deze stap kan handmatig of via script uitgevoerd worden
+
+VIA SCRIPT
+Ga naar de vostools-platform/bin directory in de   n van de componenten.
+  weblogic$ ./run.sh checkJMS.py -d $PLATFORMCONF --statusEMS
+
+Controleer of er voor elk poortnummer twee servers zijn waarvan   n actief (state: ACTIVE) en   n standby (state: FT_STANDBY).
+
+HANDMATIG
+1.	Log in op de beheerapplicatie van Tibco (zie Omgeving 3)
+2.	Navigeer naar:
+ 	Application Management
+ 	All Service Instances
+3.	Controleer of er voor elk poortnummer twee servers zijn waarvan   n actief (state: Active) en   n standby (state: Standby). Klik op een instantie om de status te zien. De instanties met de volgende poortnummers moeten worden gecontroleerd:
+Poort	Server 1  Server 2
+7224	Active	  Standby
+7226	Standby	  Active
+7228	Active	  Standby
+
+## C.7	Controleer database instanties
+1.	Log in op een van de database servers (zie Omgeving 2)
+2.	Stel als oracle-gebruiker zijn omgeving in:
+  oracle$  . oraenv
+3.      Vul SID in
+        Indien het SID niet bekend is kan deze worden opgevraagd met ps -ef | grep pmon
+4.	Controleer dat er voor elke component  een service is en dat die instantie de status READY heeft
+  oracle$ lsnrctl status | grep -E -i "bgs|bus|ics|vos|pln|uis" -A 1
+5.  Indien vanuit de root-user naar de oracle-user is gewisseld, wordt weer root-user:
+  oracle$ exit
+
+## C.8	Controleer platformversie
+Vraag de huidige versie van het platform op
+  root# echo $PLATFORM_RELEASE
+
+Controleer of de waarden overeenkomen met die uit Omgeving 6
+
+## C.9	Controleer database fouten
+Als er tijdens het uitvoeren van database scripts fouten ontstaan worden deze gelogd en het script afgebroken. Voor het geval dat fouten tijdens een installatie niet op vallen worden de logfiles gecontroleerd op fouten met het volgende commando.
+
+  oracle$ grep "ORA-" /var/log/oracle/*
+
+Dit commando geeft alle ORA-meldingen weer. Als er fouten zijn gevonden is het belangrijk te controleren of deze ook door de huidige installatie komen. 
+Dat kan door de datum in de bestandsnaam te controleren met de datum van de installatie. Of in de logfile te kijken naar de laatste foutmelding is deze van een eerdere installatie dan is het niet relevant.
+
+## C.10	Controle TIBCO Topics en Queues
+Deze stap kan handmatig of via script uitgevoerd worden
+
+VIA SCRIPT
+Ga naar de vostools-platform/bin directory in de   n van de componenten.
+  weblogic$ ./run.sh checkJMS.py -d $PLATFORMCONF --destinations
+
+1.	Controleer of Queues voor componenten BUS, UIS, PLN en VOS bestaan.
+2.	Controleer of Topics voor componenten BGS, ICS, BUS, UIS en PLN bestaan
+3.	Verifieer dat er geen pending messages zijn op de queues gevonden onder 1 en 2.
+4.	Controleer of CS Topics voor VOS bestaan
+
+HANDMATIG
+1.	Log in op de beheerapplicatie van Tibco (zie Omgeving 3)
+2.	Navigeer naar:
+ 	Application Management
+ 	All Service Instances
+3.	Navigeer naar de actieve instantie op port 7226
+4.	Controleer of Queues voor componenten BUS, UIS, PLN, TDR en VOS bestaan
+5.	Controleer of Topics voor componenten BGS, ICS, BUS, UIS, PLN en VOS bestaan
+6.	Verifieer dat er geen pending messages zijn op de queues gevonden onder 4.
+7.	Navigeer naar de actieve instantie op port 7228
+8.	Controleer of Topics voor VOS bestaan
+
+## C.11	Controle Steppingstone toegang
+
+Omschrijving	Controleren of er toegang is tot de steppingstone.
+Systemen	pcc202.hg4.post21.nl (172.20.1.29)
+user: getvosplan
+Controle 1	Controleer of Steppingstone vanaf PLN en ICS servers bereikbaar zijn.
+
+## C.12	Controle toegang BHS
+
+Omschrijving	Controleer of het Beheersysteem meldingen ontvangt van VOS, BGS, ICS, PLN, BUS, UIS, TDR
+Systemen	OMW systeem
+Controle 1	Controleer op OMW of er meldingen van de VOS omgevingen zijn ontvangen vanaf het moment na de installatie.
+Voor Productie: Nodes => Posten => Telecity4 (ndc1) => LLP Productie => LLP applicaties (prod) => en hier staan dan de 5 nodes vermeld
+Voor Beproeving: Nodes => Posten => Telecity4 (ndc1) => LLP Beproeving => LLP applicaties (bepr) => en hier staan dan de 5 nodes vermeld.
+
+## C.13	Controle SMTP
+
+Omschrijving	Controleer of Functioneel Beheer (fub-vkl@prorail.nl) conversierapport en notificaties per mail hebben ontvangen
+Systemen	fub-vkl@prorail.nl
+Controle 1	FB heeft na het laden van het dagplan een conversierapport ontvangen.
+
+## C.14	 Controle koppeling met VMB
+
+Omschrijving	Controleer of VOS uitvoeringsinformatie ontvangt van VMB
+
+Controle 1 kan handmatig of via script uitgevoerd worden
+
+VIA SCRIPT
+Controle 1	De 6 verzend en ontvang queues van VMB en VOS bevatten geen pending berichten.
+
+Ga naar de vostools-platform/bin directory in de   n van de componenten.
+  weblogic$ ./run.sh checkJMS.py -d $PLATFORMCONF --koppelingVMB
+
+Indien er pending berichten worden aangetroffen moet er gekeken worden of deze verwijderd kunnen/moeten worden.
+
+HANDMATIG
+Controle 1	De 6 verzend en ontvang queues van VMB en VOS bevatten geen pending berichten.
+Dit zijn de queues:
+-Van VOS naar VKL:
+jms.receive.executiondata
+jms.receive.infradata
+jms.receive.scheduledata
+-Van VKL naar VOS:
+jms.send.executiondata
+jms.send.infradata
+jms.send.scheduledata
+1.	Log in op de beheerapplicatie van Tibco (zie Omgeving 3)
+2.	Navigeer naar:
+ 	Application Management
+ 	All Service Instances
+3.	Navigeer naar de actieve instantie op port 7224
+4.  	Kies Queues uit het dropdown-menu en zoek op jms.*.
+5.	Controleer dat de genoemde Queues geen pending berichten bevatten
+Indien er pending berichten worden aangetroffen moet er gekeken worden of deze verwijderd kunnen/moeten worden.
+
+Controle 2	 VOS ontvangt uitvoeringsinformatie van VMB.
+1.	Log in op PVT (zie Omgeving 8)
+2.	Verifieer dat treinnummers zich verplaatsen.
+
+## C.15	 Logging controleren
+
+Omschrijving	Controleer met Splunk de logging van alle servicecomponenten op error en warning meldingen.
+
+## C.16	 Quartz Jobs controleren
+Omschrijving	Controleer in de database de status van de Quartz Jobs van een component.
+Log in  op de database
+  oracle$ sqlplus <schema_naam>/<schema_password>
+
+Update triggers met TRIGGER_STATE 'ERROR' naar 'WAITING'
+  SQL> update QRTZ_TRIGGERS set TRIGGER_STATE='WAITING' where TRIGGER_STATE='ERROR';
+
+Als er rows updated zijn moet er nog een commit uitgevoerd worden
+  SQL> commit;
+
+Sluit SQLPlus af
+  SQL> exit
+  
+## C.17  Database jobs controleren
+Omschrijving	Controleer of alle database jobs zijn afgerond. Lopende jobs blokkeren bijvoorbeeld een succesvolle rollback.
+Log in op de database als sysdba
+  oracle$ . oraenv
+  ORACLE_SID = [oracle] ? <sid>
+  oracle$ sqlplus / as sysdba
+
+Verbeter de output
+  SQL> set lin 300
+  SQL> set pagesize 50
+  
+Vraag de status op van alle procedures
+  SQL> select owner, job_name, state, last_start_date, next_run_date from dba_scheduler_jobs where state = 'RUNNING';
+
+Er mag geen job zijn met state RUNNING. Normaal gesproken zullen er overdag geen jobs RUNNING mogen zijn. Nachtelijke schoningsjobs zullen normaal
+gesproken de installatie niet verstoren. Wanneer er jobs zijn met state RUNNING, moet de installatie uitgesteld worden tot deze jobs klaar zijn. Wanneer de last_start_date langer geleden is, is de betreffende job waarschijnlijk vastgelopen en moet hij handmatig gestopt worden door een DBA. Let op: kijk ook naar jobs die op het punt staan te starten binnen het installatie window!
+
+Sluit SQLPlus af
+  SQL> exit
+
+Indien vanuit de root-user naar de oracle-user is gewisseld, wordt weer root-user:
+  oracle$ exit
+  
+## C.18  Database CRC genereren
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+Het volgende commando genereert een CRC op basis van de datadictionary van het databaseschema van het betreffende component. Vergelijk de CRC van de 
+database met die uit Tabel 1 - Applicatiegegevens.
+  oracle$ ./run.sh checkDB.py -d $PLATFORMCONF --generatecrc
+
+Indien de CRC afwijkt, kan de installatie wel doorgaan. Rapporteer dit echter bij de DBA en voer[C.19 Database datadictionary genereren] uit. Voeg dit resultaat bij voor analyse door de DBA.
+  
+## C.19  Database datadictionary genereren
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+Het volgende commando genereert een datadictionary van het databaseschema van het betreffende component. Kies een naam voor het doelbestand en vul deze in bij <doelbestand>.
+  oracle$ ./run.sh checkDB.py -d $PLATFORMCONF --datadictionary > <doelbestand>
+Het bestand <doelbestand> kan gebruikt worden voor analyses bij afwijkingen in de CRC. De naamgevingsconventie is <ORACLE_SID>_<dd-mm-jjjj>_<versie>.txt, 
+bijv. P1VOS1_01-05-2015_2.7.2.txt.
+
+## C.20 Controle UIS Stateless EJB timers
+
+Omschrijving	Controleer of de Access Total Counts van de UIS timers opgehoogd worden na een minuut
+
+Deze Controle kan handmatig of via script uitgevoerd worden
+
+VIA SCRIPT   (Dit werkt pas vanaf 2.8.1)
+Ga naar de vostools-platform/bin directory in de   n van de componenten.
+  weblogic$ ./run.sh checkWeblogic.py -d $PLATFORMCONF --ejbAccessCount
+
+Het overzicht met de access counts van de UIS timers wordt getoond. Als het overzicht na een minuut weer wordt opgevraagd, moeten de counts opgehoogd zijn.
+
+HANDMATIG
+1.	Log in op de beheerapplicatie van Weblogic (zie Omgeving 1)
+2.	Navigeer naar:
+ 	Deployments
+ 	Monitoring
+ 	EJBs
+ 	Stateless
+3.	Stel vast wat de Access Total Counts zijn van de EJB's waarvan de naam begint met 'Synchrone'
+4.	Na een minuut moeten deze counts bij verversen van de console opgehoogd zijn
+
+Indien de timer(s) niet lopen en de counts dus niet opgehoogd worden: herstart de managed servers. 
+
+-------------- Appendix (R): Rollback procedures --------------
+
+Indien de nieuwe versie van de component al gedeployed is, doe dan het volgende:
+- De nstalleer de nieuwe component volgens [R.1] op de weblogicomgeving.
+
+Indien er een database upgrade heeft plaatsgevonden, doe dan het volgende:
+- Zet de database back-up volgens [R.2] op de oracleomgeving.
+
+Indien er een <component>_ems-<nieuw-versienummer> is geinstalleerd, verwijder deze dan en installeer de oude versie:
+  root$ yum remove <component>_ems-<nieuw-versienummer>
+  root$ yum install <component>_ems-<oud-versienummer>
+
+Indien er een <component>_platform_<omgeving>-<nieuw-versienummer> is geinstalleerd, verwijder deze dan en installeer de oude versie:
+1) Ga op de adminserver naar: /opt/scripts/wls-1/bin/
+2) ./weblogic.sh removeDomain /opt/<component>/config-1/jee
+3) Kill (kill -9) de eventueel overgebleven nodemanager en adminserver processen, die je kunt vinden met: ps -eaf | grep java. Doe dit op alle servers van het cluster.
+4) Ga op de adminserver naar: /opt/weblogic/domains/
+5) rm -rf <domain-name>
+6) Verwijder uit /etc/sysconfig/wlsnodemanager.<node>.properties en de wlsServers.<node>.properties de regels van het domein van het component dat je verwijderd hebt. Let op; er kunnen in deze bestanden ook regels met configuratie van andere domeinen staan; let op dat je die niet verwijdert.
+7) De-installeer de <component>_platform_<omgeving>-<nieuw-versienummer> rpm. Hiermee worden ook de <component>_linux, <component>_files en <component>_weblogic rpm's verwijderd.
+  root$ yum remove <component>_platform_<omgeving>-<nieuw-versienummer>
+8) Installeer de oude <component>_platform_<omgeving>-<oud-versienummer> rpm, de <component>_linux rpm, de <component>_files rpm en de <component>_weblogic rpm.
+  root$ yum install <component>_platform_<omgeving>-<oud-versienummer>
+  root$ yum install <component>_files-<oud-versienummer>
+  root$ yum install <component>_linux-<oud-versienummer>
+  root$ yum install <component>_weblogic-<oud-versienummer>
+
+Voer tenslotte de volgende stappen uit:
+- Voer [I.8 Stoppen van een managed server] uit op de weblogicomgeving.
+- Voer [I.9 Starten van een managed server] uit op de weblogicomgeving.
+- Installeer de vorige component volgens [R.3] op de weblogicomgeving.
+
+---------------------------------------------------------------
+
+## R.1	Weblogic rollback undeploy nieuwe versie
+Verwijder de nieuwe versie
+  weblogic$ cd $RELEASE/<component>/vostools-deploy/bin
+  weblogic$ ./run.sh configEAR.py -d $PLATFORMCONF --undeploy
+  
+## R.2  Weblogic nieuwe PRMs verwijderen.
+Verwijder alle Weblogic RPMs in de omgekeerde volgorde van het technisch draaiboek (op alle servers van het cluster, behalve de Weblogic RPM die alleen op de admin node staat):
+root$ yum remove <component>_weblogic-<nieuweversie>
+root$ yum remove <component>_files-<nieuweversie>
+root$ yum remove <component>_linux-<nieuweversie>
+root$ yum remove <component>_platform_<omgeving>-<nieuweversie>
+Controleer of er nog Weblogic processen draaien van het component:
+root$ ps aux | grep <component>
+Als dit zo is, volg dan de volgende stappen:
+1) Ga op de adminserver naar: cd /opt/scripts/wls-1/bin/
+2) Voer uit: ./weblogic.sh removeDomain /opt/<component>/config-1/jee
+3) Kill (kill -9) de eventueel overgebleven nodemanager en adminserver processen, die je kunt vinden met: ps -eaf | grep java. Doe dit op alle servers van het cluster.
+4) Ga op de adminserver naar: /opt/weblogic/domains/
+5) rm -rf <domain-name>
+6) Verwijder uit /etc/sysconfig/wlsnodemanager.<node>.properties en de wlsServers.<node>.properties de regels van het domein van het component dat je verwijderd hebt. Let op; er kunnen in deze bestanden ook regels met configuratie van andere domeinen staan; let op dat je die niet verwijdert.
+
+## R.3	Database rollback
+Login op de database
+  oracle$ . oraenv
+  ORACLE_SID = [oracle] ? <sid>
+
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+  oracle$ sqlplus <schema_naam>/<schema_password>
+Schoon het bestaande schema op
+  SQL> @../../db/opschonen_schema.sql
+  SQL> exit
+Restore de dump
+  oracle$ impdp <schema_naam>/<schema_password> directory=VOS_DUMP dumpfile=expdp_<schema_naam>.dmp logfile=impdp_<schema_naam>_restore.log
+
+## R.4  Weblogic vorige RPMs installeren.
+Installeer de vorige Weblogic RPMs (op alle servers van het cluster, behalve de weblogic RPM die alleen op de admin node staat):
+root$ yum install <component>_platform_<omgeving>-<vorigeversie>
+root$ yum install <component>_linux-<vorigeversie>
+root$ yum install <component>_files-<vorigeversie>
+root$ yum install <component>_weblogic-<vorigeversie>
+
+## R.5	Weblogic rollback deploy vorige versie  
+  weblogic$ cd $VORIGERELEASE/<component>/vostools-deploy/bin
+Installeer topics/queues/bridges (alleen voor EE5 component)
+  weblogic$ ./run.sh configJMS.py -d $PLATFORMCONF --install --all
+Deploy de vorige versie
+  weblogic$ ./run.sh configEAR.py -d $PLATFORMCONF --deploy
+
+## R.6  Fallback
+Login op de database
+  oracle$ . oraenv
+  ORACLE_SID = [oracle] ? <sid>
+
+  oracle$ cd $RELEASE/<component>/vostools-deploy/bin
+  oracle$ sqlplus <schema_naam>/<schema_password>
+
+Voer het fallback script uit om het schema compatibel te maken met de versie <versienr>
+  SQL> @../../db/<component>_fallback_<versienr>.sql <logdirectory met schrijfrechten> <tablespace_dat> <tablespace_idx>
+
+Er wordt gelogd naar <component>_fallback_<versienr>_<datumtijd>.log

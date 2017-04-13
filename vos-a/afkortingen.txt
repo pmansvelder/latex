@@ -1,0 +1,32 @@
+AGA & Automatische GSM-R Alarmering
+BER & Berichtenapplicatie van VOS == PBB in VKL
+BGS & Basisgegevens Service
+BUIS & Buitenlands Uitvoerings informatie Service
+BUS & Bewaken Uitvoering Service
+CI & Common Interface
+CSD & ProRail ICT-S Operations Centrale Service Desk
+DIvS & Dienstregeling Informatie voor Spoorwegondernemingen = 'VOS voor vervoerders'
+GTI & Goederen Treinen Inchecken
+HBP & Hoog Beschikbaar Platform
+ICS & InfraConfiguratie Service
+LLP & Landelijk Linux Platform
+LVS & Linux Virtual Server (load balancing software for Linux kernel-bases operating systems)
+OSIRIS & Ondersteunende Services voor Interoperabele Rail Informatiesystemen
+PBB & Presenteren en Beheren Berichten (VKL)
+PLN & Plan Service
+PMD & Presenteren Muteren Dienstregeling ( = TWD)
+PVT & Presenteren Volgen Treinen (VKL)
+RNE & RailNet Europe
+TAF / TSI & Telematic Applications for Freight / Technical Specification for Interoperability
+TDR & TreinDossier
+TIS & Train Information System (van RailNet Europe)
+TNR & TreinNummerReeksen
+TRDL & Treindienstleidersscherm (VKL)
+TWD & TijdWeg Diagram van VOS ( = 'dynamische' versie van PMD in VKL == dTWD/VMB)
+UIS & Uitvoering Informatie Service
+ViP & VOS in Productie project
+VKL & VerKeersLeiding
+VMB & VKL Message Broker
+VOS & Verkeersleiding Ondersteunend Systeem
+VT & Volgen Trein applicatie van VOS == PVT in VKL
+VVV & VOS-EXT applicatieverkorting voor BHS = VOS Voor Vervoerders

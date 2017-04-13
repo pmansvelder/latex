@@ -12,6 +12,7 @@ vos-b: 	vos-b/ids-parameters.txt
 	cp vos-b/* .
 vos-a: 	vos-a/ids-parameters.txt
 	cp vos-a/* .
+	./splitfiles.sh ./TECH-DBK-COMMANDO-REFERENTIE.txt
 vmb-a: vmb-a/ids-parameters.txt
 	cp vmb-a/* .
 b2b-b: b2b-bepr.txt
@@ -26,5 +27,7 @@ osiris-b: osiris-b/ids-parameters.txt
 osiris-p: osiris-p/ids-parameters.txt
 	cp osiris-p/* .
 clean: 
-	rm *.cmd
-
+	rm -f *.cmd
+	rm -f *.txt
+	rm -f *.pdf
+	rm -f *.out
