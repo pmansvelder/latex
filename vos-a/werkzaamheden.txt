@@ -1,1 +1,1 @@
-Dit hoofdstuk beschrijft de installatiestappen voor VMB.
+Dit hoofdstuk beschrijft de installatiestappen voor de IndienstStelling van VOS op de Acceptatieomgeving.
