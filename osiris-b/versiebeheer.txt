@@ -1,7 +1,0 @@
-1.0A & 1 November 2016 & Overgenomen van VMB 3.3 versie & Wim van de Put
-1.0B & 2 November 2016 & Intern reviewcommentaar verwerkt & Wim van de Put
-1.0C & 5 januari 2017 & Aanpassen JTA-time-out toegevoegd & Wim van de Put
-1.0D & 9 februari 2017 & Bevindingen van Modelpost installatie verwerkt & Wim van de Put
-1.0E & 14 februari 2017 & Extern reviewcommentaar en EMS7 servers verwerkt & Wim van de Put
-1.0F & 15 februari 2017 & Reviewcommentaar Peter Mansvelder verwerkt & Wim van de Put
-1.0G & 24 februari 2017 & Reviewcommentaar Peter Mansvelder verwerkt & Rian van Oers

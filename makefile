@@ -18,13 +18,13 @@ vmb-a: vmb-a/ids-parameters.txt
 	cp defaults/* .
 	cp vmb-a/* .
 b2b-b: b2b-bepr.txt
-	./convert_txt.sh b2b-bepr.txt ids-parameters.tex
-	cp vosnodes_b.txt nodes.txt
-	cp b2b_artikelen.txt artikelen_raw.txt
+	cp defaults/* .
+	cp b2b-b/* .
 avp: avp-database.txt
 	./convert_txt.sh avp-database.txt ids-parameters.tex
 	cp avp-artikelen.txt artikelen.txt
 osiris-b: osiris-b/ids-parameters.txt
+	cp defaults/* .
 	cp osiris-b/* .
 osiris-p: osiris-p/ids-parameters.txt
 	cp osiris-p/* .

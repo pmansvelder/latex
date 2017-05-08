@@ -1,12 +1,12 @@
 DienstChange IDS
 Dienst OSIRIS
 DienstEigenaar Peter Mansvelder
-DienstVersie 4.1
+DienstVersie 4.2-0
 DienstOmgeving Beproeving
 DraaiboekVersie 0.1
 DraaiboekStatus Concept
-DraaiboekOmschrijving Tweede Concept LaTeX opzet
-DraaiboekAuteur Peter Mansvelder
+DraaiboekOmschrijving OSIRIS 4.2-0-Org-DBK beproeving
+DraaiboekAuteur Rian van Oers
 Copyright Copyright (c) 2017 ProRail
 GoedkeuringBedrijf ProRail
 GoedkeuringNaam Peter Mansvelder

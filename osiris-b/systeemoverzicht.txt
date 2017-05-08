@@ -1,9 +1,17 @@
-Deze handleiding beschrijft hoe via RPM bestanden VMB kan worden geinstalleerd/gedeinstalleerd. Een volledige installatie bestaat uit de componenten genoemd in paragraaf \ref{artikelen}.
+Het doel van dit document is het verschaffen van informatie voor het uitvoeren van de indienstelling van de OSIRIS 4.2-0 op de beproevingsomgeving omgeving van LLP
 
-Omdat er een tussenversie (3.4-2) is geinstalleerd op de modelpost die niet op de overige platformen gezet is, wordt deze installatie eerst weer teruggedraaid, voordat de nieuwe versie (3.4-3) wordt geinstalleerd. Er wordt dus weer teruggegaan naar de VMB 3.3 versie, zodat dezelfde situatie bestaat als op de andere platformen. 
+De datum voor de indienststelling is gepland op 2-5-2017.
 
-De handelingen om de situatie op de modelpost gelijk te maken aan de overige platformen staan beschreven in hoofdstuk \ref{ch:fallback}. Op deze manier is het draaiboek qua opzet gelijk aan de draaiboeken voor de overige platformen. 
+De indienststelling zal overdag plaatsvinden en wordt door een Technisch beheerder SDT2 - ICT-Operations ism. Paul Snijders (Ordina) uitgevoerd.
 
-Bij het bouwen van de RPM-bestanden, wordt de RPM zo aangemaakt dat deze geschikt is voor een bepaalde omgeving. In configuratie bestanden worden de hiervoor benodigde gegevens opgenomen. Denk hierbij aan de ip-adressen van de machines, wachtwoorden, databasekoppelingen, etc. Deze gegevens worden voornamelijk verwerkt in de weblogic en platform RPM bestanden.
+Dit document is bestemd voor betrokken medewerkers van ICT-Operations (SDT2), ProRail en Ordina.
 
-Voor deze installatie van VMB, geldt dat de databases al aanwezig zijn op het platform waarop geinstalleerd wordt. Ook de fysieke queues zijn in de omgeving al aanwezig. De koppeling met deze queues en met de databases wordt gemaakt bij het installeren van de platform en weblogic RPM.
+Dit document geeft een overzicht van de activiteiten die vooraf, tijdens en na de wijziging plaats vinden.
+
+Het product omvat OSIRIS 4.2-0. Het product is middels CHG-418931 beschikbaar gesteld op satelite(s): 
+\begin{itemize}
+\item{applications-5}
+\item{prorail-applications-6u5-1_0}
+\end{itemize}
+
+Het doel van de indienststelling is het doorvoeren van de in de SVD vermeldde wijzigingen op de OSIRIS software. 
